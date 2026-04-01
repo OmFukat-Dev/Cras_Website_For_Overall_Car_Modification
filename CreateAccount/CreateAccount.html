@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="StyleSheet.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <title>Create Account - Car Repair & Auto Services</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="CreateAccount Image/Logo.svg" alt="Cras Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../MainPage/Index.html">HOME</a></li>
+                    <li><a href="../Navigation/About/About.html">ABOUT</a></li>
+                    <li><a href="../Navigation/Services/Services.html">SERVICES</a></li>
+                    <li><a href="../Pricing.html">PRICING</a></li>
+                    <li><a href="../Navigation/Blog/Blog.html">BLOG</a></li>
+                    <li><a href="../Navigation/Buy%20Car/BuyCar.html">BUY CAR</a></li>
+                    <li><a href="../Navigation/Contact%20Us/ContactUs.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <div class="phone">
+                    <span class="icon">📞</span>
+                    <span>1-800-915-6271</span>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="create-account">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>CREATE YOUR ACCOUNT</h1>
+                    <p>Join our community and unlock exclusive benefits for your automotive experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Create Account Section -->
+    <section class="create-account-section">
+        <div class="create-account-container">
+            <!-- Create Account Form -->
+            <div class="create-account-form">
+                <h2>JOIN CRAS COMMUNITY</h2>
+                <form id="createAccountForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" class="form-control" required
+                                placeholder="Enter your first name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" class="form-control" required
+                                placeholder="Enter your last name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" class="form-control" required
+                            placeholder="Enter your email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" class="form-control" required placeholder="(123) 456-7890">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <div class="password-toggle">
+                                <input type="password" id="password" class="form-control" required
+                                    placeholder="Create a strong password">
+                                <button type="button" onclick="togglePassword('password')">👁️</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password *</label>
+                            <div class="password-toggle">
+                                <input type="password" id="confirmPassword" class="form-control" required
+                                    placeholder="Confirm your password">
+                                <button type="button" onclick="togglePassword('confirmPassword')">👁️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Information Section -->
+                    <div class="vehicle-info">
+                        <h3>YOUR VEHICLE INFORMATION</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vehicleMake">Vehicle Make</label>
+                                <input type="text" id="vehicleMake" class="form-control"
+                                    placeholder="e.g., Toyota, BMW">
+                            </div>
+                            <div class="form-group">
+                                <label for="vehicleModel">Vehicle Model</label>
+                                <input type="text" id="vehicleModel" class="form-control" placeholder="e.g., Camry, X5">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vehicleYear">Year</label>
+                                <select id="vehicleYear" class="form-control">
+                                    <option value="">Select Year</option>
+                                    <script>
+                                        const currentYear = new Date().getFullYear();
+                                        for (let year = currentYear; year >= 1990; year--) {
+                                            document.write(`<option value="${year}">${year}</option>`);
+                                        }
+                                    </script>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="licensePlate">License Plate</label>
+                                <input type="text" id="licensePlate" class="form-control"
+                                    placeholder="Enter license plate">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="terms-section">
+                        <label>
+                            <input type="checkbox" id="termsAgree" required>
+                            I agree to the <a href="../TermsConditions.html" target="_blank">Terms of Service</a> and <a href="../PrivacyPolicy.html"
+                                target="_blank">Privacy Policy</a>. I understand that CRAS may send me marketing
+                            communications and I can unsubscribe at any time.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">CREATE ACCOUNT</button>
+                </form>
+
+                <div class="divider">
+                    <span>OR SIGN UP WITH</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn" title="Sign up with Facebook">f</button>
+                    <button class="social-btn" title="Sign up with LinkedIn">in</button>
+                    <button class="social-btn" title="Sign up with Google">G</button>
+                </div>
+
+                <div class="login-link">
+                    <p>Already have an account? <a href="../SignIn/SignIn.html"
+                            style="color: orangered; text-decoration: none;">Sign In</a></p>
+                </div>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="benefits-section">
+                <h3>MEMBER BENEFITS</h3>
+                <p>Create your account today and enjoy these exclusive benefits:</p>
+                <ul class="benefits-list">
+                    <li>Save your vehicle information for faster service</li>
+                    <li>Track your complete service history online</li>
+                    <li>Schedule appointments 24/7 from anywhere</li>
+                    <li>Receive exclusive member-only discounts</li>
+                    <li>Get priority scheduling for emergency repairs</li>
+                    <li>Access detailed service reports and invoices</li>
+                    <li>Receive maintenance reminders and tips</li>
+                    <li>Earn loyalty points on every service</li>
+                </ul>
+
+                <div class="membership-benefits">
+                    <h4>PREMIUM MEMBERSHIP</h4>
+                    <p>Upgrade to Premium for additional benefits including free roadside assistance, extended
+                        warranties, and VIP service lanes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>SIGN UP FOR OUR NEWSLETTER TO GET WEEKLY UPDATES ON EXCLUSIVE OFFERS AND DISCOUNTS!</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email...">
+                <button type="submit"><a href="../SignIn/SignIn.html"
+                        style="color: white; text-decoration: none;">SUBSCRIBE</a></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="CreateAccount Image/Logo.svg" alt="Cras Logo">
+                    </div>
+                    <p>Providing top-quality automotive repair and maintenance services for over 10 years. Our certified
+                        technicians are dedicated to keeping your vehicle running smoothly and safely.</p>
+                    <div class="contact-info">
+                        <div class="phone">
+                            <span class="icon">📞</span>
+                            <span>1-800-915-6271</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="../MainPage/Index.html">Home</a></li>
+                        <li><a href="../Navigation/About/About.html">About</a></li>
+                        <li><a href="../Navigation/Services/Services.html">Services</a></li>
+                        <li><a href="../Pricing.html">Pricing</a></li>
+                        <li><a href="../Navigation/Blog/Blog.html">Blog</a></li>
+                        <li><a href="../Navigation/Buy%20Car/BuyCar.html">Buy Car</a></li>
+                        <li><a href="../Navigation/Contact%20Us/ContactUs.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="../Appointment/Appointment.html">Appointment</a></li>
+                        <li><a href="../Navigation/Blog/Blog.html">Blog / News</a></li>
+                        <li><a href="../FAQ.html">FAQ Questions</a></li>
+                        <li><a href="../Team Section/OurTeam.html">Our Team</a></li>
+                        <li><a href="../PrivacyPolicy.html">Privacy Policy</a></li>
+                        <li><a href="../TermsConditions.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>LOCATION & CONTACT</h4>
+                    <div class="contact-info">
+                        <p>901 N Pitt Str, Suite 170 Alexandria, NY, USA</p>
+                        <p>example@email.com</p>
+                        <p>Sun - Thu: Open 27/7</p>
+                    </div>
+                    <div class="social-icons">
+                        <span><a href="https://www.instagram.com/accounts/login/?hl=en"
+                                style="text-decoration: none; color: white;">in</a></span>
+                        <span><a href="https://www.facebook.com/"
+                                style="text-decoration: none; color: white;">f</a></span>
+                        <span><a href="https://x.com/i/flow/login?lang=en"
+                                style="text-decoration: none; color: white;">X</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 CRAS Automotive. All Rights Reserved. | <a href="../PrivacyPolicy.html"
+                        style="color:#aaa;text-decoration:none;">Privacy Policy</a> | <a href="../TermsConditions.html"
+                        style="color:#aaa;text-decoration:none;">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">↑</div>
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

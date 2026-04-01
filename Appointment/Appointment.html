@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment - Car Repair & Auto Services</title>
+    <link rel="stylesheet" href="StyleSheet.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="Appointment Image/Logo.svg" alt="Cras Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../MainPage/Index.html">HOME</a></li>
+                    <li><a href="../Navigation/About/About.html">ABOUT</a></li>
+                    <li><a href="../Navigation/Services/Services.html">SERVICES</a></li>
+                    <li><a href="../Pricing.html">PRICING</a></li>
+                    <li><a href="../Navigation/Blog/Blog.html">BLOG</a></li>
+                    <li><a href="../Navigation/Buy%20Car/BuyCar.html">BUY CAR</a></li>
+                    <li><a href="../Navigation/Contact%20Us/ContactUs.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <div class="phone">
+                    <span class="icon">📞</span>
+                    <span>1-800-915-6271</span>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="appointment">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>SCHEDULE AN APPOINTMENT</h1>
+                    <p>Book your automotive service online and experience the CRAS difference. Our certified technicians
+                        are ready to provide expert care for your vehicle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Form Section -->
+    <section class="appointment-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>BOOK YOUR SERVICE</h2>
+                <p>Fill out the form below and our team will contact you to confirm your appointment details</p>
+            </div>
+
+            <div class="appointment-container">
+                <div class="appointment-form">
+                    <form id="bookingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vehicleMake">Vehicle Make *</label>
+                                <input type="text" id="vehicleMake" class="form-control"
+                                    placeholder="e.g., Toyota, BMW, Ford" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="vehicleModel">Vehicle Model *</label>
+                                <input type="text" id="vehicleModel" class="form-control"
+                                    placeholder="e.g., Camry, X5, F-150" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vehicleYear">Year *</label>
+                                <select id="vehicleYear" class="form-control" required>
+                                    <option value="">Select Year</option>
+                                    <script>
+                                        const currentYear = new Date().getFullYear();
+                                        for (let year = currentYear; year >= 1990; year--) {
+                                            document.write(`<option value="${year}">${year}</option>`);
+                                        }
+                                    </script>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredDate">Preferred Date *</label>
+                                <input type="date" id="preferredDate" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferredTime">Preferred Time *</label>
+                            <select id="preferredTime" class="form-control" required>
+                                <option value="">Select Time</option>
+                                <option value="08:00">8:00 AM</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Services Required *</label>
+                            <div class="service-checkboxes">
+                                <label class="service-checkbox">
+                                    <input type="checkbox" name="services" value="oil-change">
+                                    <span>Oil Change</span>
+                                </label>
+                                <label class="service-checkbox">
+                                    <input type="checkbox" name="services" value="brake-service">
+                                    <span>Brake Service</span>
+                                </label>
+                                <label class="service-checkbox">
+                                    <input type="checkbox" name="services" value="tire-rotation">
+                                    <span>Tire Rotation</span>
+                                </label>
+                                <label class="service-checkbox">
+                                    <input type="checkbox" name="services" value="engine-diagnostics">
+                                    <span>Engine Diagnostics</span>
+                                </label>
+                                <label class="service-checkbox">
+                                    <input type="checkbox" name="services" value="ac-service">
+                                    <span>A/C Service</span>
+                                </label>
+                                <label class="service-checkbox">
+                                    <input type="checkbox" name="services" value="transmission">
+                                    <span>Transmission Service</span>
+                                </label>
+                                <label class="service-checkbox">
+                                    <input type="checkbox" name="services" value="performance-tuning">
+                                    <span>Performance Tuning</span>
+                                </label>
+                                <label class="service-checkbox">
+                                    <input type="checkbox" name="services" value="detailing">
+                                    <span>Detailing</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Additional Notes</label>
+                            <textarea id="message" class="form-control" rows="4"
+                                placeholder="Describe any specific issues or concerns with your vehicle..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">SCHEDULE APPOINTMENT</button>
+                    </form>
+                </div>
+
+                <div class="info-sidebar">
+                    <div class="info-card">
+                        <h3>CONTACT INFORMATION</h3>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h4>Our Location</h4>
+                                <p>901 N Pitt Str, Suite 170<br>Alexandria, NY, USA</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h4>Phone Number</h4>
+                                <p>(406) 555-0120</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-details">
+                                <h4>Email Address</h4>
+                                <p>example@email.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card working-hours">
+                        <h3>WORKING HOURS</h3>
+                        <p><span class="highlight">Monday - Friday:</span> 8:00 AM - 6:00 PM</p>
+                        <p><span class="highlight">Saturday:</span> 9:00 AM - 4:00 PM</p>
+                        <p><span class="highlight">Sunday:</span> Closed</p>
+                        <p style="margin-top: 20px; color: #ff5533; font-weight: 600;">Emergency services available 24/7
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>POPULAR SERVICES</h2>
+                <p>Choose from our most requested automotive services</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-item">
+                    <h4>OIL CHANGE</h4>
+                    <p>Full synthetic oil change with premium filter replacement and comprehensive vehicle inspection.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <h4>BRAKE SERVICE</h4>
+                    <p>Complete brake system inspection, pad replacement, rotor resurfacing, and fluid flush.</p>
+                </div>
+                <div class="service-item">
+                    <h4>ENGINE DIAGNOSTICS</h4>
+                    <p>Advanced computer diagnostics to identify and resolve engine performance issues quickly.</p>
+                </div>
+                <div class="service-item">
+                    <h4>PERFORMANCE TUNING</h4>
+                    <p>ECU remapping and performance optimization for enhanced power, torque, and efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>SIGN UP FOR OUR NEWSLETTER TO GET WEEKLY UPDATES ON EXCLUSIVE OFFERS AND DISCOUNTS!</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email...">
+                <button type="submit"><a href="../SignIn/SignIn.html"
+                        style="color: white; text-decoration: none;">SUBSCRIBE</a></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="Appointment Image/Logo.svg" alt="Cras Logo">
+                    </div>
+                    <p>Providing top-quality automotive repair and maintenance services for over 10 years. Our certified
+                        technicians are dedicated to keeping your vehicle running smoothly and safely.</p>
+                    <div class="contact-info">
+                        <div class="phone">
+                            <span class="icon">📞</span>
+                            <span>1-800-915-6271</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="../MainPage/Index.html">Home</a></li>
+                        <li><a href="../Navigation/About/About.html">ABOUT</a></li>
+                        <li><a href="../Navigation/Services/Services.html">SERVICES</a></li>
+                        <li><a href="../Pricing.html">PRICING</a></li>
+                        <li><a href="../Navigation/Blog/Blog.html">BLOG</a></li>
+                        <li><a href="../Navigation/Buy%20Car/BuyCar.html">BUY CAR</a></li>
+                        <li><a href="../Navigation/Contact%20Us/ContactUs.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="Appointment.html">Appointment</a></li>
+                        <li><a href="../Navigation/Blog/Blog.html">Blog / News</a></li>
+                        <li><a href="../FAQ.html">FAQ Questions</a></li>
+                        <li><a href="../Team Section/OurTeam.html">Our Team</a></li>
+                        <li><a href="../PrivacyPolicy.html">Privacy Policy</a></li>
+                        <li><a href="../TermsConditions.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>LOCATION & CONTACT</h4>
+                    <div class="contact-info">
+                        <p>901 N Pitt Str, Suite 170 Alexandria, NY, USA</p>
+                        <p>example@email.com</p>
+                        <p>Sun - Thu: Open 27/7</p>
+                    </div>
+                    <div class="social-icons">
+                        <span><a href="https://www.instagram.com/accounts/login/?hl=en"
+                                style="text-decoration: none; color: white;">in</a></span>
+                        <span><a href="https://www.facebook.com/"
+                                style="text-decoration: none; color: white;">f</a></span>
+                        <span><a href="https://x.com/i/flow/login?lang=en"
+                                style="text-decoration: none; color: white;">X</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 CRAS Automotive. All Rights Reserved. | <a href="../PrivacyPolicy.html"
+                        style="color:#aaa;text-decoration:none;">Privacy Policy</a> | <a href="../TermsConditions.html"
+                        style="color:#aaa;text-decoration:none;">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">↑</div>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Redirect to Thank You page on form submission
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Check that at least one service is selected
+            const services = document.querySelectorAll('input[name="services"]:checked');
+            if (services.length === 0) {
+                alert('Please select at least one service.');
+                return;
+            }
+            // Redirect to Thank You page
+            window.location.href = '../ThankYou.html';
+        });
+    </script>
+</body>
+
+</html>

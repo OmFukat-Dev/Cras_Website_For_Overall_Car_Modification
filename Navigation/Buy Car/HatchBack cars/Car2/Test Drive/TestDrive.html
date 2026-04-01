@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="StyleSheet.css">
+    <link rel="stylesheet" href="../../../../../assets/css/common.css">
+    <title>Schedule Test Drive - Car Repair & Auto Services</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="Logo.svg" alt="Cras Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../../../../MainPage/Index.html">HOME</a></li>
+                        <li><a href="../../../../About/About.html">ABOUT</a></li>
+                        <li><a href="../../../../Services/Services.html">SERVICES</a></li>
+                        <li><a href="../../../../Blog/Blog.html">BLOG</a></li>
+                        <li><a href="../../../BuyCar.html">BUY CAR</a></li>
+                        <li><a href="../../../../Contact%20Us/ContactUs.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <div class="phone">
+                    <span class="icon">📞</span>
+                    <span>1-800-915-6271</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="test-drive">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>SCHEDULE TEST DRIVE</h1>
+                    <p>Experience the vehicle of your choice in person. Our test drive process is designed to give you a comprehensive understanding of the car's performance and features.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicle Info Section -->
+    <section class="vehicle-info-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 20px; background: linear-gradient(90deg, #ffffff, #ff5533); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">SELECTED VEHICLE</h2>
+                <p style="color: #cccccc; max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Review the details of the vehicle you'd like to test drive</p>
+            </div>
+            
+            <div class="vehicle-container">
+                <div class="vehicle-image">
+                    <img src="MainImage.jpg" alt="2023 Toyota Camry LE">
+                </div>
+                <div class="vehicle-details">
+                    <h2 class="vehicle-title">2023 Volkswagen GTI</h2>
+                    <div class="vehicle-type">HachBack • Hybrid • Automatic</div>
+                    
+                    <div class="vehicle-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Year:</span>
+                            <span>2023</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Mileage:</span>
+                            <span>25,000 miles</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Engine:</span>
+                            <span>Hybrid</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Transmission:</span>
+                            <span>Automatic</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Color:</span>
+                            <span>Silver</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Stock #:</span>
+                            <span>CAM23-LE-001</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vehicle-price">$50,000</div>
+                    
+                    <p style="color: #aaaaaa; line-height: 1.7;">
+                        Experience the efficiency and reliability of the Volkswagen GTI Hybrid. With outstanding fuel economy and a smooth ride, this vehicle is perfect for daily commuting and long-distance travel.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Drive Form Section -->
+    <section class="test-drive-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 20px; background: linear-gradient(90deg, #ffffff, #ff5533); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">SCHEDULE YOUR TEST DRIVE</h2>
+                <p style="color: #cccccc; max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Fill out the form below and our team will contact you to confirm your appointment</p>
+            </div>
+            
+            <div class="test-drive-container">
+                <div class="test-drive-form">
+                    <form id="testDriveForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" class="form-control" required placeholder="Enter your first name">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" class="form-control" required placeholder="Enter your last name">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-control" required placeholder="Enter your email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-control" required placeholder="(123) 456-7890">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferredDate">Preferred Date *</label>
+                            <input type="date" id="preferredDate" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Preferred Time *</label>
+                            <div class="preferred-time">
+                                <label class="time-slot">
+                                    <input type="radio" name="timeSlot" value="09:00" required>
+                                    <span>9:00 AM</span>
+                                </label>
+                                <label class="time-slot">
+                                    <input type="radio" name="timeSlot" value="10:00" required>
+                                    <span>10:00 AM</span>
+                                </label>
+                                <label class="time-slot">
+                                    <input type="radio" name="timeSlot" value="11:00" required>
+                                    <span>11:00 AM</span>
+                                </label>
+                                <label class="time-slot">
+                                    <input type="radio" name="timeSlot" value="13:00" required>
+                                    <span>1:00 PM</span>
+                                </label>
+                                <label class="time-slot">
+                                    <input type="radio" name="timeSlot" value="14:00" required>
+                                    <span>2:00 PM</span>
+                                </label>
+                                <label class="time-slot">
+                                    <input type="radio" name="timeSlot" value="15:00" required>
+                                    <span>3:00 PM</span>
+                                </label>
+                                <label class="time-slot">
+                                    <input type="radio" name="timeSlot" value="16:00" required>
+                                    <span>4:00 PM</span>
+                                </label>
+                                <label class="time-slot">
+                                    <input type="radio" name="timeSlot" value="17:00" required>
+                                    <span>5:00 PM</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="test-drive-notes">
+                            <h3>TEST DRIVE NOTES</h3>
+                            <p>• Please bring your driver's license</p>
+                            <p>• Allow 30-45 minutes for the test drive</p>
+                            <p>• Our experienced staff will accompany you</p>
+                            <p>• Insurance is provided during the test drive</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Additional Notes</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Any specific questions or preferences?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">SCHEDULE TEST DRIVE</button>
+                    </form>
+                </div>
+                
+                <div class="test-drive-info">
+                    <div class="info-card">
+                        <h3>CONTACT INFORMATION</h3>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h4>Our Location</h4>
+                                <p>901 N Pitt Str, Suite 170<br>Alexandria, NY, USA</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h4>Phone Number</h4>
+                                <p>(406) 555-0120</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-details">
+                                <h4>Email Address</h4>
+                                <p>example@email.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card working-hours">
+                        <h3>WORKING HOURS</h3>
+                        <p><span class="highlight">Monday - Friday:</span> 8:00 AM - 6:00 PM</p>
+                        <p><span class="highlight">Saturday:</span> 9:00 AM - 4:00 PM</p>
+                        <p><span class="highlight">Sunday:</span> Closed</p>
+                        <p style="margin-top: 20px; color: #ff5533; font-weight: 600;">Test drives available until 5:00 PM</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>WHAT TO EXPECT</h3>
+                        <p style="color: #aaaaaa; font-size: 0.95rem; line-height: 1.6;">
+                            Your test drive will include a comprehensive vehicle walkthrough, demonstration of key features, and a route that showcases the car's performance in various driving conditions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Drive Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 20px; background: linear-gradient(90deg, #ffffff, #ff5533); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">OUR TEST DRIVE PROCESS</h2>
+                <p style="color: #cccccc; max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Simple and efficient steps to get you behind the wheel</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-label">BOOK</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-label">CONFIRM</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-label">TEST DRIVE</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-label">DECIDE</div>
+                    </div>
+                </div>
+                
+                <div class="process-description">
+                    <h3>SEAMLESS TEST DRIVE EXPERIENCE</h3>
+                    <p><strong>Step 1: Book Online</strong> - Schedule your preferred date and time using our convenient online form.</p>
+                    <p><strong>Step 2: Confirmation</strong> - Our team will contact you within 2 hours to confirm your appointment and answer any questions.</p>
+                    <p><strong>Step 3: Test Drive</strong> - Arrive at our facility, meet with our experienced staff, and enjoy a comprehensive test drive of your chosen vehicle.</p>
+                    <p><strong>Step 4: Decision</strong> - After your test drive, discuss financing options, trade-in values, and next steps with our sales team - no pressure, just helpful guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>SIGN UP FOR OUR NEWSLETTER TO GET WEEKLY UPDATES ON EXCLUSIVE OFFERS AND DISCOUNTS!</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email...">
+                <button type="submit"><a href="../SignIn/SignIn.html" style="color: white; text-decoration: none;">SUBSCRIBE</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="Logo.svg" alt="Cras Logo">
+                    </div>
+                    <p>Providing top-quality automotive repair and maintenance services for over 10 years. Our certified technicians are dedicated to keeping your vehicle running smoothly and safely.</p>
+                    <div class="contact-info">
+                        <div class="phone">
+                            <span class="icon">📞</span>
+                            <span>1-800-915-6271</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="../../../../../MainPage/Index.html">HOME</a></li>
+                        <li><a href="../../../../About/About.html">ABOUT</a></li>
+                        <li><a href="../../../../Services/Services.html">SERVICES</a></li>
+                        <li><a href="../../../../Blog/Blog.html">BLOG</a></li>
+                        <li><a href="../../../BuyCar.html">BUY CAR</a></li>
+                        <li><a href="../../../../Contact%20Us/ContactUs.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="../../../../../Appointment/Appointment.html">Appointment</a></li>
+                        <li><a href="../../../../Blog/Blog.html">Blog / News</a></li>
+                        <li><a href="../../../../About/About.html">FAQ Questions</a></li>
+                        <li><a href="../../../../../Team Section/OurTeam.html">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>LOCATION & CONTACT</h4>
+                    <div class="contact-info">
+                        <p>901 N Pitt Str, Suite 170 Alexandria, NY, USA</p>
+                        <p>example@email.com</p>
+                        <p>Sun - Thu: Open 27/7</p>
+                    </div>
+                    <div class="social-icons">
+                        <span><a href="https://www.instagram.com/accounts/login/?hl=en" style="text-decoration: none; color: white;">in</a></span>
+                        <span><a href="https://www.facebook.com/" style="text-decoration: none; color: white;">f</a></span>
+                        <span><a href="https://x.com/i/flow/login?lang=en" style="text-decoration: none; color: white;">X</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright 2024, All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">↑</div>
+    <script src="../../../../../assets/js/script.js"></script>
+</body>
+</html>
+

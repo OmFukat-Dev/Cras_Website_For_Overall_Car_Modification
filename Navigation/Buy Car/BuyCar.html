@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="StyleSheet.css">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <title>Used Cars - Car Repair & Auto Services</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="BuyCar Image/Logo.svg" alt="Cras Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../MainPage/Index.html">HOME</a></li>
+                    <li><a href="../About/About.html">ABOUT</a></li>
+                    <li><a href="../Services/Services.html">SERVICES</a></li>
+                    <li><a href="../../Pricing.html">PRICING</a></li>
+                    <li><a href="../Blog/Blog.html">BLOG</a></li>
+                    <li><a href="../Buy%20Car/BuyCar.html">BUY CAR</a></li>
+                    <li><a href="../Contact%20Us/ContactUs.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <div class="phone">
+                    <span class="icon">📞</span>
+                    <span>1-800-915-6271</span>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="used-cars">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>PREMIUM USED CARS</h1>
+                    <p>Discover our carefully curated selection of high-quality pre-owned vehicles. Every car undergoes
+                        rigorous inspection and comes with our certified warranty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Filters Section -->
+    <section class="search-filters">
+        <div class="container">
+            <div class="section-header">
+                <h2>FIND YOUR PERFECT CAR</h2>
+                <p>Use our advanced search filters to narrow down your options</p>
+            </div>
+
+            <div class="filters-container">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="carType">Car Type</label>
+                        <select id="carType" class="filter-control">
+                            <option value="">All Types</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="suv">SUV</option>
+                            <option value="truck">Truck</option>
+                            <option value="coupe">Coupe</option>
+                            <option value="hatchback">Hatchback</option>
+                            <option value="van">Van/Minivan</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="make">Make</label>
+                        <select id="make" class="filter-control">
+                            <option value="">All Makes</option>
+                            <option value="toyota">Toyota</option>
+                            <option value="honda">Honda</option>
+                            <option value="ford">Ford</option>
+                            <option value="bmw">BMW</option>
+                            <option value="mercedes">Mercedes-Benz</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="priceRange">Price Range</label>
+                        <select id="priceRange" class="filter-control">
+                            <option value="">Any Price</option>
+                            <option value="0-15000">$0 - $15,000</option>
+                            <option value="15000-30000">$15,000 - $30,000</option>
+                            <option value="30000-50000">$30,000 - $50,000</option>
+                            <option value="50000+">$50,000+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="year">Year</label>
+                        <select id="year" class="filter-control">
+                            <option value="">Any Year</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="mileage">Mileage</label>
+                        <select id="mileage" class="filter-control">
+                            <option value="">Any Mileage</option>
+                            <option value="0-30000">Under 30,000 miles</option>
+                            <option value="30000-60000">30,000 - 60,000 miles</option>
+                            <option value="60000-100000">60,000 - 100,000 miles</option>
+                            <option value="100000+">Over 100,000 miles</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="transmission">Transmission</label>
+                        <select id="transmission" class="filter-control">
+                            <option value="">Any Transmission</option>
+                            <option value="automatic">Automatic</option>
+                            <option value="manual">Manual</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="apply-filters">APPLY FILTERS</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Types Navigation -->
+    <section class="car-types-nav">
+        <div class="container">
+            <div class="section-header">
+                <h2>BROWSE BY VEHICLE TYPE</h2>
+                <p>Explore our inventory organized by car category</p>
+            </div>
+
+            <div class="car-types">
+                <button class="car-type-btn active" data-type="all">All Vehicles</button>
+                <button class="car-type-btn" data-type="sedan">Sedan</button>
+                <button class="car-type-btn" data-type="suv">SUV</button>
+                <button class="car-type-btn" data-type="truck">Truck</button>
+                <button class="car-type-btn" data-type="coupe">Coupe</button>
+                <button class="car-type-btn" data-type="hatchback">Hatchback</button>
+                <button class="car-type-btn" data-type="van">Van/Minivan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Inventory Section -->
+    <section class="inventory-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>AVAILABLE INVENTORY</h2>
+                <p>Quality pre-owned vehicles with certified inspection and warranty</p>
+            </div>
+
+            <div class="cars-grid">
+                <!-- Sedan -->
+                <div class="car-card" data-type="sedan">
+                    <img src="BuyCar Image/Sedan1.avif" alt="2023 Toyota Camry" class="car-image">
+                    <div class="car-badge">CERTIFIED</div>
+                    <div class="car-content">
+                        <div class="car-type">Sedan</div>
+                        <h3 class="car-title">2023 BMW M5</h3>
+                        <div class="car-specs">
+                            <div class="spec-item">Year : 2023</div>
+                            <div class="spec-item">Driven : 25,000 miles</div>
+                            <div class="spec-item">Fuel Type : Hybrid</div>
+                            <div class="spec-item">Gear Type : Automatic</div>
+                        </div>
+                        <div class="car-price">$50,000</div>
+                        <div class="car-actions">
+                            <button class="btn-primary"><a href="Sedan Cars/Car1/Car1.html"
+                                    style="color: white; text-decoration: none;">VIEW DETAILS</a></button>
+                            <button class="btn-secondary"><a href="Sedan Cars/Car1/Test Drive/TestDrive.html"
+                                    style="color: white; text-decoration: none;">SCHEDULE TEST DRIVE</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUV -->
+                <div class="car-card" data-type="suv">
+                    <img src="BuyCar Image/SUV1.avif" alt="2022 Honda CR-V" class="car-image">
+                    <div class="car-badge">LOW MILES</div>
+                    <div class="car-content">
+                        <div class="car-type">SUV</div>
+                        <h3 class="car-title">2023 Mercedes-Maybach GLS</h3>
+                        <div class="car-specs">
+                            <div class="spec-item">Year : 2023</div>
+                            <div class="spec-item">Driven : 25,000 miles</div>
+                            <div class="spec-item">Fuel Type : Hybrid</div>
+                            <div class="spec-item">Gear Type : Automatic</div>
+                        </div>
+                        <div class="car-price">$50,000</div>
+                        <div class="car-actions">
+                            <button class="btn-primary"><a href="SUV cars/Car1/Car1.html"
+                                    style="color: white; text-decoration: none;">VIEW DETAILS</a></button>
+                            <button class="btn-secondary"><a href="SUV cars/Car1/Test Drive/TestDrive.html"
+                                    style="color: white; text-decoration: none;">SCHEDULE TEST DRIVE</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Truck -->
+                <div class="car-card" data-type="truck">
+                    <img src="BuyCar Image/Truck1.jpg" alt="2023 Ford F-150" class="car-image">
+                    <div class="car-badge">4x4</div>
+                    <div class="car-content">
+                        <div class="car-type">Truck</div>
+                        <h3 class="car-title">2023 Ford F-150 XLT</h3>
+                        <div class="car-specs">
+                            <div class="spec-item">Year : 2023</div>
+                            <div class="spec-item">Driven : 25,000 miles</div>
+                            <div class="spec-item">Fuel Type : Hybrid</div>
+                            <div class="spec-item">Gear Type : Automatic</div>
+                        </div>
+                        <div class="car-price">$50,000</div>
+                        <div class="car-actions">
+                            <button class="btn-primary"><a href="Trucks cars/Car1/Car1.html"
+                                    style="color: white; text-decoration: none;">VIEW DETAILS</a></button>
+                            <button class="btn-secondary"><a href="Trucks cars/Car1/Test Drive/TestDrive.html"
+                                    style="color: white; text-decoration: none;">SCHEDULE TEST DRIVE</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coupe -->
+                <div class="car-card" data-type="coupe">
+                    <img src="BuyCar Image/Coupe1.avif" alt="2021 BMW 430i" class="car-image">
+                    <div class="car-badge">SPORT</div>
+                    <div class="car-content">
+                        <div class="car-type">Coupe</div>
+                        <h3 class="car-title">2023 Mini Cooper Coupe JCW GP</h3>
+                        <div class="car-specs">
+                            <div class="spec-item">Year : 2023</div>
+                            <div class="spec-item">Driven : 25,000 miles</div>
+                            <div class="spec-item">Fuel Type : Hybrid</div>
+                            <div class="spec-item">Gear Type : Automatic</div>
+                        </div>
+                        <div class="car-price">$50,000</div>
+                        <div class="car-actions">
+                            <button class="btn-primary"><a href="Coupe cars/Car1/Car1.html"
+                                    style="color: white; text-decoration: none;">VIEW DETAILS</a></button>
+                            <button class="btn-secondary"><a href="Coupe cars/Car1/Test Drive/TestDrive.html"
+                                    style="color: white; text-decoration: none;">SCHEDULE TEST DRIVE</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hatchback -->
+                <div class="car-card" data-type="hatchback">
+                    <img src="BuyCar Image/HachBack2.avif" alt="2022 Volkswagen Golf" class="car-image">
+                    <div class="car-badge">FUEL EFFICIENT</div>
+                    <div class="car-content">
+                        <div class="car-type">Hatchback</div>
+                        <h3 class="car-title">2023 Volkswagen Golf GTI</h3>
+                        <div class="car-specs">
+                            <div class="spec-item">Year : 2023</div>
+                            <div class="spec-item">Driven : 25,000 miles</div>
+                            <div class="spec-item">Fuel Type : Hybrid</div>
+                            <div class="spec-item">Gear Type : Automatic</div>
+                        </div>
+                        <div class="car-price">$50,000</div>
+                        <div class="car-actions">
+                            <button class="btn-primary"><a href="HatchBack cars/Car2/Car2.html"
+                                    style="color: white; text-decoration: none;">VIEW DETAILS</a></button>
+                            <button class="btn-secondary"><a href="HatchBack cars/Car2/Test Drive/TestDrive.html"
+                                    style="color: white; text-decoration: none;">SCHEDULE TEST DRIVE</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Van -->
+                <div class="car-card" data-type="van">
+                    <img src="BuyCar Image/Van1.avif" alt="2023 Honda Odyssey" class="car-image">
+                    <div class="car-badge">FAMILY</div>
+                    <div class="car-content">
+                        <div class="car-type">Van/Minivan</div>
+                        <h3 class="car-title">2023 Toyota Vellfire</h3>
+                        <div class="car-specs">
+                            <div class="spec-item">Year : 2023</div>
+                            <div class="spec-item">Driven : 25,000 miles</div>
+                            <div class="spec-item">Fuel Type : Hybrid</div>
+                            <div class="spec-item">Gear Type : Automatic</div>
+                        </div>
+                        <div class="car-price">$50,000</div>
+                        <div class="car-actions">
+                            <button class="btn-primary"><a href="Van/Car1/Car1.html"
+                                    style="color: white; text-decoration: none;">VIEW DETAILS</a></button>
+                            <button class="btn-secondary"><a href="Van/Car1/Test Drive/TestDrive.html"
+                                    style="color: white; text-decoration: none;">SCHEDULE TEST DRIVE</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional SUV -->
+                <div class="car-card" data-type="suv">
+                    <img src="BuyCar Image/SUV2.avif" alt="2022 Toyota RAV4" class="car-image">
+                    <div class="car-badge">AWD</div>
+                    <div class="car-content">
+                        <div class="car-type">SUV</div>
+                        <h3 class="car-title">2023 Lamborghini Urus</h3>
+                        <div class="car-specs">
+                            <div class="spec-item">Year : 2023</div>
+                            <div class="spec-item">Driven : 25,000 miles</div>
+                            <div class="spec-item">Fule Type : Hybrid</div>
+                            <div class="spec-item">Gear Type : Automatic</div>
+                        </div>
+                        <div class="car-price">$50,000</div>
+                        <div class="car-actions">
+                            <button class="btn-primary"><a href="SUV cars/Car2/Car2.html"
+                                    style="color: white; text-decoration: none;">VIEW DETAILS</a></button>
+                            <button class="btn-secondary"><a href="SUV cars/Car2/Test Drive/TestDrive.html"
+                                    style="color: white; text-decoration: none;">SCHEDULE TEST DRIVE</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Sedan -->
+                <div class="car-card" data-type="sedan">
+                    <img src="BuyCar Image/Sedan2.avif" alt="2021 Honda Accord" class="car-image">
+                    <div class="car-badge">CLEAN TITLE</div>
+                    <div class="car-content">
+                        <div class="car-type">Sedan</div>
+                        <h3 class="car-title">2023 Lexus LS</h3>
+                        <div class="car-specs">
+                            <div class="spec-item">Year : 2023</div>
+                            <div class="spec-item">Driven : 25,000 miles</div>
+                            <div class="spec-item">Fuel Type : Hybrid</div>
+                            <div class="spec-item">Gear Type : Automatic</div>
+                        </div>
+                        <div class="car-price">$50,000</div>
+                        <div class="car-actions">
+                            <button class="btn-primary"><a href="Sedan Cars/Car2/Car2.html"
+                                    style="color: white; text-decoration: none;">VIEW DETAILS</a></button>
+                            <button class="btn-secondary"><a href="Sedan Cars/Car2/Test Drive/TestDrive.html"
+                                    style="color: white; text-decoration: none;">SCHEDULE TEST DRIVE</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-card" data-type="truck">
+                    <img src="BuyCar Image/Truck2.avif" alt="2023 Ford F-150" class="car-image">
+                    <div class="car-badge">4x4</div>
+                    <div class="car-content">
+                        <div class="car-type">Truck</div>
+                        <h3 class="car-title">2023 GMC Sierra Heavy Duty</h3>
+                        <div class="car-specs">
+                            <div class="spec-item">Year : 2023</div>
+                            <div class="spec-item">Driven : 25,000 miles</div>
+                            <div class="spec-item">Fuel Type : Hybrid</div>
+                            <div class="spec-item">Gear Type : Automatic</div>
+                        </div>
+                        <div class="car-price">$50,000</div>
+                        <div class="car-actions">
+                            <button class="btn-primary"><a href="Trucks cars/Car2/Car2.html"
+                                    style="color: white; text-decoration: none;">VIEW DETAILS</a></button>
+                            <button class="btn-secondary"><a href="Trucks cars/Car2/Test Drive/TestDrive.html"
+                                    style="color: white; text-decoration: none;">SCHEDULE TEST DRIVE</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-card" data-type="coupe">
+                    <img src="BuyCar Image/Coupe2.jpg" alt="2021 BMW 430i" class="car-image">
+                    <div class="car-badge">SPORT</div>
+                    <div class="car-content">
+                        <div class="car-type">Coupe</div>
+                        <h3 class="car-title">2023 Audi Q5</h3>
+                        <div class="car-specs">
+                            <div class="spec-item">Year : 2023</div>
+                            <div class="spec-item">Driven : 25,000 miles</div>
+                            <div class="spec-item">Fuel Type : Hybrid</div>
+                            <div class="spec-item">Gear Type : Automatic</div>
+                        </div>
+                        <div class="car-price">$50,000</div>
+                        <div class="car-actions">
+                            <button class="btn-primary"><a href="Coupe cars/Car2/Car2.html"
+                                    style="color: white; text-decoration: none;">VIEW DETAILS</a></button>
+                            <button class="btn-secondary"><a href="Coupe cars/Car2/Test Drive/TestDrive.html"
+                                    style="color: white; text-decoration: none;">SCHEDULE TEST DRIVE</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-card" data-type="hatchback">
+                    <img src="BuyCar Image/Hackback1.webp" alt="2022 Volkswagen Golf" class="car-image">
+                    <div class="car-badge">FUEL EFFICIENT</div>
+                    <div class="car-content">
+                        <div class="car-type">Hatchback</div>
+                        <h3 class="car-title">2023 Audi A5 Sportsback</h3>
+                        <div class="car-specs">
+                            <div class="spec-item">Year : 2023</div>
+                            <div class="spec-item">Driven : 25,000 miles</div>
+                            <div class="spec-item">Fuel Type : Hybrid</div>
+                            <div class="spec-item">Gear Type : Automatic</div>
+                        </div>
+                        <div class="car-price">$50,000</div>
+                        <div class="car-actions">
+                            <button class="btn-primary"><a href="HatchBack cars/Car1/Car1.html"
+                                    style="color: white; text-decoration: none;">VIEW DETAILS</a></button>
+                            <button class="btn-secondary"><a href="HatchBack cars/Car1/Test Drive/TestDrive.html"
+                                    style="color: white; text-decoration: none;">SCHEDULE TEST DRIVE</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-card" data-type="van">
+                    <img src="BuyCar Image/Van2.webp" alt="2023 Honda Odyssey" class="car-image">
+                    <div class="car-badge">FAMILY</div>
+                    <div class="car-content">
+                        <div class="car-type">Van/Minivan</div>
+                        <h3 class="car-title">2023 Klassen Vellfire</h3>
+                        <div class="car-specs">
+                            <div class="spec-item">Year : 2023</div>
+                            <div class="spec-item">Driven : 25,000 miles</div>
+                            <div class="spec-item">Fuel Type : Hybrid</div>
+                            <div class="spec-item">Gear Type : Automatic</div>
+                        </div>
+                        <div class="car-price">$50,000</div>
+                        <div class="car-actions">
+                            <button class="btn-primary"><a href="Van/Car2/Car2.html"
+                                    style="color: white; text-decoration: none;">VIEW DETAILS</a></button>
+                            <button class="btn-secondary"><a href="Van/Car2/Test Drive/TestDrive.html"
+                                    style="color: white; text-decoration: none;">SCHEDULE TEST DRIVE</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section">
+        <div class="container">
+            <div class="why-choose-content">
+                <div class="why-choose-text">
+                    <h2>WHY BUY FROM US?</h2>
+                    <p>At CRAS Automotive, we don't just sell cars—we build relationships. Our commitment to quality,
+                        transparency, and customer satisfaction sets us apart from the competition.</p>
+                    <p>Every vehicle in our inventory undergoes a comprehensive 150-point inspection by our certified
+                        technicians, ensuring you get a reliable car that you can trust.</p>
+
+                    <ul class="benefits-list">
+                        <li>CERTIFIED PRE-OWNED VEHICLES</li>
+                        <li>150-POINT INSPECTION PROCESS</li>
+                        <li>30-DAY MONEY-BACK GUARANTEE</li>
+                        <li>LOW INTEREST FINANCING OPTIONS</li>
+                        <li>TRADE-IN APPRAISALS</li>
+                        <li>LIFETIME WARRANTY AVAILABLE</li>
+                    </ul>
+                </div>
+                <div class="why-choose-image">
+                    <img src="BuyCar Image/WhychooseUs.webp" alt="Quality Inspection">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>SIGN UP FOR OUR NEWSLETTER TO GET WEEKLY UPDATES ON EXCLUSIVE OFFERS AND DISCOUNTS!</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email...">
+                <button type="submit"><a href="../../SignIn/SignIn.html"
+                        style="color: white; text-decoration: none;">SUBSCRIBE</a></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="BuyCar Image/Logo.svg" alt="Cras Logo">
+                    </div>
+                    <p>Providing top-quality automotive repair and maintenance services for over 10 years. Our certified
+                        technicians are dedicated to keeping your vehicle running smoothly and safely.</p>
+                    <div class="contact-info">
+                        <div class="phone">
+                            <span class="icon">📞</span>
+                            <span>1-800-915-6271</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="../../MainPage/Index.html">Home</a></li>
+                        <li><a href="../About/About.html">ABOUT</a></li>
+                        <li><a href="../Services/Services.html">SERVICES</a></li>
+                        <li><a href="../../Pricing.html">PRICING</a></li>
+                        <li><a href="../Blog/Blog.html">BLOG</a></li>
+                        <li><a href="../Buy%20Car/BuyCar.html">BUY CAR</a></li>
+                        <li><a href="../Contact%20Us/ContactUs.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="../../Appointment/Appointment.html">Appointment</a></li>
+                        <li><a href="../Blog/Blog.html">Blog / News</a></li>
+                        <li><a href="../../FAQ.html">FAQ Questions</a></li>
+                        <li><a href="../../Team Section/OurTeam.html">Our Team</a></li>
+                        <li><a href="../../PrivacyPolicy.html">Privacy Policy</a></li>
+                        <li><a href="../../TermsConditions.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>LOCATION & CONTACT</h4>
+                    <div class="contact-info">
+                        <p>901 N Pitt Str, Suite 170 Alexandria, NY, USA</p>
+                        <p>example@email.com</p>
+                        <p>Sun - Thu: Open 27/7</p>
+                    </div>
+                    <div class="social-icons">
+                        <span><a href="https://www.instagram.com/accounts/login/?hl=en"
+                                style="text-decoration: none; color: white;">in</a></span>
+                        <span><a href="https://www.facebook.com/"
+                                style="text-decoration: none; color: white;">f</a></span>
+                        <span><a href="https://x.com/i/flow/login?lang=en"
+                                style="text-decoration: none; color: white;">X</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 CRAS Automotive. All Rights Reserved. | <a href="../../PrivacyPolicy.html"
+                        style="color:#aaa;text-decoration:none;">Privacy Policy</a> | <a
+                        href="../../TermsConditions.html" style="color:#aaa;text-decoration:none;">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">↑</div>
+    <script src="../../assets/js/script.js"></script>
+</body>
+
+</html>

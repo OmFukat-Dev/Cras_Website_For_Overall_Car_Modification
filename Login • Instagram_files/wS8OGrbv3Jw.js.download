@@ -1,0 +1,4 @@
+;/*FB_PKG_DELIM*/
+
+__d("PolarisAccountRecoveryPasswordResetRoot.entrypoint",["JSResourceForInteraction"],(function(t,n,r,o,a,i,l){"use strict";var e={getPreloadProps:function(t){return{queries:{}}},root:r("JSResourceForInteraction")("PolarisAccountRecoveryPasswordResetRoot.react").__setRef("PolarisAccountRecoveryPasswordResetRoot.entrypoint")};l.default=e}),98);
+__d("PolarisEmailSignupRoot.entrypoint",["JSResourceForInteraction"],(function(t,n,r,o,a,i,l){"use strict";var e={getPreloadProps:function(t){return{queries:{}}},root:r("JSResourceForInteraction")("PolarisEmailSignupRoot.react").__setRef("PolarisEmailSignupRoot.entrypoint")};l.default=e}),98);

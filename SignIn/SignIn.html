@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="StyleSheet.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <title>Account - Car Repair & Auto Services</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="Logo.svg" alt="Cras Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../MainPage/Index.html">HOME</a></li>
+                    <li><a href="../Navigation/About/About.html">ABOUT</a></li>
+                    <li><a href="../Navigation/Services/Services.html">SERVICES</a></li>
+                    <li><a href="../Pricing.html">PRICING</a></li>
+                    <li><a href="../Navigation/Blog/Blog.html">BLOG</a></li>
+                    <li><a href="../Navigation/Buy%20Car/BuyCar.html">BUY CAR</a></li>
+                    <li><a href="../Navigation/Contact%20Us/ContactUs.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <div class="phone">
+                    <span class="icon">📞</span>
+                    <span>1-800-915-6271</span>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="account">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>MY ACCOUNT</h1>
+                    <p>Sign in to manage your appointments, view service history, and access exclusive member benefits.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authentication Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <!-- Login Form -->
+            <div class="auth-form" id="loginForm">
+                <h2>WELCOME BACK</h2>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address *</label>
+                        <input type="email" id="loginEmail" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password *</label>
+                        <div class="password-toggle">
+                            <input type="password" id="loginPassword" class="form-control" required>
+                            <button type="button" onclick="togglePassword('loginPassword')">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label class="remember">
+                            <input type="checkbox" id="rememberMe">
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="submit-btn">SIGN IN</button>
+                </form>
+
+                <div class="divider">
+                    <span>OR CONTINUE WITH</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn"><a href="https://www.facebook.com/"
+                            style="color: white; text-decoration: none;">f</a></button>
+                    <button class="social-btn"><a href="https://www.instagram.com/accounts/login/?hl=en"
+                            style="color: white; text-decoration: none;">in</a></button>
+                    <button class="social-btn"><a href="https://x.com/i/flow/login?lang=en"
+                            style="color: white; text-decoration: none;">X</a></button>
+                </div>
+
+                <div class="switch-form">
+                    <p>Don't have an account? <a href="#" onclick="showSignupForm()">Create Account</a></p>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="auth-form" id="signupForm" style="display: none;">
+                <h2>CREATE ACCOUNT</h2>
+                <form id="signupFormElement">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address *</label>
+                        <input type="email" id="signupEmail" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupPhone">Phone Number</label>
+                        <input type="tel" id="signupPhone" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupPassword">Password *</label>
+                        <div class="password-toggle">
+                            <input type="password" id="signupPassword" class="form-control" required>
+                            <button type="button" onclick="togglePassword('signupPassword')">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <div class="password-toggle">
+                            <input type="password" id="confirmPassword" class="form-control" required>
+                            <button type="button" onclick="togglePassword('confirmPassword')">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="remember">
+                            <input type="checkbox" id="termsAgree" required>
+                            I agree to the <a href="../TermsConditions.html" style="color: #ff5533; text-decoration: none;">Terms of
+                                Service</a> and <a href="../PrivacyPolicy.html" style="color: #ff5533; text-decoration: none;">Privacy
+                                Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">CREATE ACCOUNT</button>
+                </form>
+
+                <div class="divider">
+                    <span>OR SIGN UP WITH</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn"><a href="https://www.facebook.com/"
+                            style="color: white; text-decoration: none;">f</a></button>
+                    <button class="social-btn"><a href="https://www.instagram.com/accounts/login/?hl=en"
+                            style="color: white; text-decoration: none;">in</a></button>
+                    <button class="social-btn"><a href="https://x.com/i/flow/login?lang=en"
+                            style="color: white; text-decoration: none;">X</a></button>
+                </div>
+
+                <div class="switch-form">
+                    <p>Already have an account? <a href="#" onclick="showLoginForm()">Sign In</a></p>
+                </div>
+            </div>
+
+            <!-- Auth Image/Info -->
+            <div class="auth-image">
+                <h3>JOIN OUR COMMUNITY</h3>
+                <p>Create an account to unlock exclusive benefits and streamline your automotive experience.</p>
+                <ul class="benefits-list">
+                    <li>Save your vehicle information</li>
+                    <li>Track service history</li>
+                    <li>Schedule appointments online</li>
+                    <li>Receive exclusive offers</li>
+                    <li>Access member-only content</li>
+                    <li>Get priority service</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>SIGN UP FOR OUR NEWSLETTER TO GET WEEKLY UPDATES ON EXCLUSIVE OFFERS AND DISCOUNTS!</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email...">
+                <button type="submit"><a href="../SignIn/SignIn.html"
+                        style="color: white; text-decoration: none;">SUBSCRIBE</a></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="Logo.svg" alt="Cras Logo">
+                    </div>
+                    <p>Providing top-quality automotive repair and maintenance services for over 10 years. Our certified
+                        technicians are dedicated to keeping your vehicle running smoothly and safely.</p>
+                    <div class="contact-info">
+                        <div class="phone">
+                            <span class="icon">📞</span>
+                            <span>1-800-915-6271</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="../MainPage/Index.html">Home</a></li>
+                        <li><a href="../Navigation/About/About.html">About</a></li>
+                        <li><a href="../Navigation/Services/Services.html">Services</a></li>
+                        <li><a href="../Pricing.html">Pricing</a></li>
+                        <li><a href="../Navigation/Blog/Blog.html">Blog</a></li>
+                        <li><a href="../Navigation/Buy%20Car/BuyCar.html">Buy Car</a></li>
+                        <li><a href="../Navigation/Contact%20Us/ContactUs.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="../Appointment/Appointment.html">Appointment</a></li>
+                        <li><a href="../Navigation/Blog/Blog.html">Blog / News</a></li>
+                        <li><a href="../FAQ.html">FAQ Questions</a></li>
+                        <li><a href="../Team Section/OurTeam.html">Our Team</a></li>
+                        <li><a href="../PrivacyPolicy.html">Privacy Policy</a></li>
+                        <li><a href="../TermsConditions.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>LOCATION & CONTACT</h4>
+                    <div class="contact-info">
+                        <p>901 N Pitt Str, Suite 170 Alexandria, NY, USA</p>
+                        <p>example@email.com</p>
+                        <p>Sun - Thu: Open 27/7</p>
+                    </div>
+                    <div class="social-icons">
+                        <span><a href="https://www.instagram.com/accounts/login/?hl=en"
+                                style="text-decoration: none; color: white;">in</a></span>
+                        <span><a href="https://www.facebook.com/"
+                                style="text-decoration: none; color: white;">f</a></span>
+                        <span><a href="https://x.com/i/flow/login?lang=en"
+                                style="text-decoration: none; color: white;">X</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 CRAS Automotive. All Rights Reserved. | <a href="../PrivacyPolicy.html"
+                        style="color:#aaa;text-decoration:none;">Privacy Policy</a> | <a href="../TermsConditions.html"
+                        style="color:#aaa;text-decoration:none;">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">↑</div>
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & Finance - CRAS Automotive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(0, 0, 0, 0.97);
+            padding: 10px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            transition: transform 0.3s;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 12px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: #ff5533;
+        }
+
+        nav ul li a.active {
+            color: #ff5533;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff5533;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        .phone-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .phone-header .ph-icon {
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 85, 51, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 85, 51, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 85, 51, 0);
+            }
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.97);
+            padding: 20px;
+            z-index: 999;
+            border-bottom: 1px solid rgba(255, 85, 51, 0.3);
+        }
+
+        .mobile-nav.open {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+        }
+
+        .mobile-nav ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .mobile-nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.05rem;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .mobile-nav ul li a:hover {
+            color: #ff5533;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.88)), url('MainPage/Index Images/MainBackground1.jpeg') center/cover no-repeat;
+            padding: 190px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(to top, #0f0f0f, transparent);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 85, 51, 0.15);
+            border: 1px solid rgba(255, 85, 51, 0.4);
+            color: #ff5533;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, #ff5533);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 680px;
+            margin: 0 auto 40px;
+            color: #ccc;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 85, 51, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            border-color: #ff5533;
+            color: #ff5533;
+            box-shadow: none;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat .num {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-stat p {
+            color: #aaa;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* SECTION HEADER */
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-header .eyebrow {
+            color: #ff5533;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #fff, #ff5533);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: #aaa;
+            max-width: 620px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* TABS */
+        .tabs-section {
+            padding: 80px 0 0;
+        }
+
+        .tab-bar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 55px;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            padding: 12px 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 6px 20px rgba(255, 85, 51, 0.35);
+        }
+
+        /* PRICING CARDS */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .pricing-card {
+            background: linear-gradient(145deg, #1a1a1a, #252525);
+            padding: 35px 28px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 85, 51, 0.06), transparent);
+            transition: 0.6s;
+        }
+
+        .pricing-card:hover::before {
+            left: 100%;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+            border-color: rgba(255, 85, 51, 0.3);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #ff5533;
+            transform: scale(1.03);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.03) translateY(-8px);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 18px;
+            right: -30px;
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            color: #fff;
+            padding: 5px 42px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+
+        .card-icon {
+            font-size: 2.8rem;
+            margin-bottom: 18px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .original-price {
+            font-size: 0.95rem;
+            color: #555;
+            text-decoration: line-through;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 8px 0 20px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 0 0 25px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 9px 0;
+            color: #aaa;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: #ff5533;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .card-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-sm {
+            padding: 11px 20px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        #tab-popular .pricing-card.featured .btn {
+            background: #fff;
+            color: #ff5533;
+            -webkit-text-fill-color: #ff5533;
+            position: relative;
+            z-index: 1;
+        }
+
+        #tab-popular .pricing-card.featured .btn:hover {
+            color: #ff5533;
+            -webkit-text-fill-color: #ff5533;
+        }
+
+        /* TAB SECTIONS */
+        .tab-content {
+            padding-bottom: 90px;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        /* CALCULATOR */
+        .calc-section {
+            padding: 90px 0;
+            background: linear-gradient(to bottom, #121212, #1a1a1a);
+        }
+
+        .calc-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .calc-info h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, #ff5533);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .calc-info p {
+            color: #aaa;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .finance-highlight {
+            background: rgba(255, 85, 51, 0.1);
+            border: 1px solid rgba(255, 85, 51, 0.25);
+            border-radius: 14px;
+            padding: 20px 25px;
+            margin-top: 25px;
+        }
+
+        .finance-highlight h4 {
+            color: #ff5533;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .finance-highlight ul {
+            list-style: none;
+        }
+
+        .finance-highlight ul li {
+            padding: 6px 0;
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+
+        .finance-highlight ul li::before {
+            content: '→';
+            color: #ff5533;
+            margin-right: 8px;
+        }
+
+        .calc-card {
+            background: linear-gradient(145deg, #1c1c1c, #282828);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .calc-card h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .calc-group {
+            margin-bottom: 20px;
+        }
+
+        .calc-group label {
+            display: block;
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .calc-group input,
+        .calc-group select {
+            width: 100%;
+            padding: 13px 16px;
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .calc-group input:focus,
+        .calc-group select:focus {
+            outline: none;
+            border-color: #ff5533;
+        }
+
+        .calc-result {
+            background: rgba(255, 85, 51, 0.1);
+            border: 1px solid rgba(255, 85, 51, 0.3);
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .calc-result .monthly {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #ff5533;
+        }
+
+        .calc-result p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* PROMOTIONS */
+        .promotions {
+            padding: 90px 0;
+            background: linear-gradient(to bottom, #1a1a1a, #121212);
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .promo-card {
+            position: relative;
+            background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+            border-radius: 20px;
+            padding: 35px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 85, 51, 0.3);
+        }
+
+        .promo-card .promo-glow {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255, 85, 51, 0.2), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .promo-tag {
+            display: inline-block;
+            background: rgba(255, 85, 51, 0.15);
+            border: 1px solid rgba(255, 85, 51, 0.35);
+            color: #ff5533;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .promo-card h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .promo-discount {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0;
+        }
+
+        .promo-card p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .promo-expires {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 12px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 90px 0;
+            background: linear-gradient(to bottom, #121212, #1a1a1a);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: linear-gradient(145deg, #1a1a1a, #252525);
+            border-radius: 14px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 85, 51, 0.3);
+        }
+
+        .faq-question {
+            padding: 22px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: #ff5533;
+        }
+
+        .faq-icon {
+            color: #ff5533;
+            font-size: 1.4rem;
+            transition: transform 0.35s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 25px 22px;
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 250px;
+        }
+
+        /* NEWSLETTER */
+        .newsletter {
+            padding: 70px 0;
+            background: linear-gradient(135deg, rgba(255, 85, 51, 0.08), rgba(255, 85, 51, 0.03));
+            border-top: 1px solid rgba(255, 85, 51, 0.15);
+            border-bottom: 1px solid rgba(255, 85, 51, 0.15);
+            text-align: center;
+        }
+
+        .newsletter h3 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #fff, #ff5533);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .newsletter p {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 22px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #ff5533;
+        }
+
+        .newsletter-form button {
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 85, 51, 0.4);
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(to bottom, #121212, #0a0a0a);
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-col .logo img {
+            height: 38px;
+            margin-bottom: 18px;
+        }
+
+        .footer-col p {
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 35px;
+            height: 2px;
+            background: linear-gradient(90deg, #ff5533, transparent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ff5533;
+        }
+
+        .footer-col ul li a::before {
+            content: '→';
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all 0.3s;
+        }
+
+        .footer-col ul li a:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .footer-phone {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .footer-phone .ico {
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .footer-phone span {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(145deg, #252525, #333);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: #555;
+            font-size: 0.88rem;
+        }
+
+        .copyright a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .copyright a:hover {
+            color: #ff5533;
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            color: #fff;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(255, 85, 51, 0.4);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 85, 51, 0.5);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:992px) {
+            .calc-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:768px) {
+            nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .hero-stats {
+                gap: 25px;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                gap: 30px;
+            }
+        }
+
+        @media(max-width:480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 150px 0 90px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="MainPage/Index.html"><img src="MainPage/Index Images/Logo.svg" alt="CRAS Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="MainPage/Index.html">HOME</a></li>
+                    <li><a href="Navigation/About/About.html">ABOUT</a></li>
+                    <li><a href="Navigation/Services/Services.html">SERVICES</a></li>
+                    <li><a href="Pricing.html" class="active">PRICING</a></li>
+                    <li><a href="Navigation/Blog/Blog.html">BLOG</a></li>
+                    <li><a href="Navigation/Buy Car/BuyCar.html">BUY CAR</a></li>
+                    <li><a href="Navigation/Contact Us/ContactUs.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="phone-header">
+                <span class="ph-icon">📞</span>
+                <span>1-800-915-6271</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="MainPage/Index.html">HOME</a></li>
+            <li><a href="Navigation/About/About.html">ABOUT</a></li>
+            <li><a href="Navigation/Services/Services.html">SERVICES</a></li>
+            <li><a href="Pricing.html">PRICING</a></li>
+            <li><a href="Navigation/Blog/Blog.html">BLOG</a></li>
+            <li><a href="Navigation/Buy Car/BuyCar.html">BUY CAR</a></li>
+            <li><a href="Navigation/Contact Us/ContactUs.html">CONTACT</a></li>
+            <li><a href="Appointment/Appointment.html">BOOK APPOINTMENT</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">💰 TRANSPARENT PRICING — NO HIDDEN FEES</div>
+            <h1>PRICING &amp; FINANCE</h1>
+            <p>Choose from our expertly crafted service packages or customize your own. Flexible financing available for
+                every budget.</p>
+            <div class="hero-btns">
+                <a href="Appointment/Appointment.html" class="btn">BOOK APPOINTMENT</a>
+                <a href="#pricing-tabs" class="btn btn-outline">VIEW PACKAGES</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="num">10+</div>
+                    <p>YEARS EXPERIENCE</p>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">900+</div>
+                    <p>5-STAR REVIEWS</p>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">4.99%</div>
+                    <p>FINANCING FROM</p>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">$0</div>
+                    <p>HIDDEN FEES</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING TABS -->
+    <section class="tabs-section" id="pricing-tabs">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow">— SERVICE PACKAGES —</div>
+                <h2>FIND YOUR PERFECT PLAN</h2>
+                <p>Browse pricing by category. Every package includes a written estimate and a 12-month / 12,000-mile
+                    warranty.</p>
+            </div>
+            <div class="tab-bar">
+                <button class="tab-btn active" onclick="switchTab('popular',this)">⭐ POPULAR PACKAGES</button>
+                <button class="tab-btn" onclick="switchTab('interior',this)">🪑 INTERIOR</button>
+                <button class="tab-btn" onclick="switchTab('exterior',this)">🎨 EXTERIOR</button>
+                <button class="tab-btn" onclick="switchTab('engine',this)">⚡ ENGINE &amp; PERFORMANCE</button>
+            </div>
+
+            <div class="tab-content">
+
+                <!-- POPULAR -->
+                <div class="tab-panel active" id="tab-popular">
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="card-icon">🔧</div>
+                            <h3>Total Car Care</h3>
+                            <span class="original-price">$399.99</span>
+                            <div class="price">$299.99</div>
+                            <ul class="pricing-features">
+                                <li>Full Diagnostic Scan</li>
+                                <li>Performance Tuning</li>
+                                <li>Exhaust System Check</li>
+                                <li>Performance Brake Upgrade</li>
+                                <li>Interior &amp; Exterior Detailing</li>
+                                <li>12-Month Warranty</li>
+                            </ul>
+                            <div class="card-btns">
+                                <a href="Appointment/Appointment.html" class="btn btn-sm">GET STARTED</a>
+                            </div>
+                        </div>
+                        <div class="pricing-card featured">
+                            <div class="featured-badge">BEST VALUE</div>
+                            <div class="card-icon">⚡</div>
+                            <h3>Performance Enhancement</h3>
+                            <span class="original-price">$699.99</span>
+                            <div class="price">$599.99</div>
+                            <ul class="pricing-features">
+                                <li>ECU Remapping</li>
+                                <li>Turbo Upgrade</li>
+                                <li>Track Suspension Kit</li>
+                                <li>Dyno Tuning &amp; Full Report</li>
+                                <li>Interior &amp; Exterior Detailing</li>
+                                <li>Priority Scheduling</li>
+                            </ul>
+                            <div class="card-btns">
+                                <a href="Appointment/Appointment.html" class="btn btn-sm">GET STARTED</a>
+                            </div>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="card-icon">🚛</div>
+                            <h3>Fleet Maintenance</h3>
+                            <span class="original-price">$499.99</span>
+                            <div class="price">$399.99</div>
+                            <ul class="pricing-features">
+                                <li>Preventive Maintenance</li>
+                                <li>Driver Safety Training</li>
+                                <li>24/7 Roadside Assistance</li>
+                                <li>Custom Reporting Dashboard</li>
+                                <li>Multi-Vehicle Discounts</li>
+                                <li>Dedicated Account Manager</li>
+                            </ul>
+                            <div class="card-btns">
+                                <a href="Appointment/Appointment.html" class="btn btn-sm">GET STARTED</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INTERIOR -->
+                <div class="tab-panel" id="tab-interior">
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="card-icon">🪑</div>
+                            <h3>Premium Leather Seats</h3>
+                            <div class="price">$1,299+</div>
+                            <ul class="pricing-features">
+                                <li>Full leather reupholstery</li>
+                                <li>Heating &amp; ventilation</li>
+                                <li>Massage function (optional)</li>
+                                <li>Custom stitching patterns</li>
+                                <li>10-year material warranty</li>
+                            </ul>
+                            <div class="card-btns">
+                                <a href="Navigation/Services/Services.html" class="btn btn-outline btn-sm">VIEW
+                                    DETAILS</a>
+                                <a href="Appointment/Appointment.html" class="btn btn-sm">REQUEST QUOTE</a>
+                            </div>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="card-icon">📱</div>
+                            <h3>Tech Integration</h3>
+                            <div class="price">$899+</div>
+                            <ul class="pricing-features">
+                                <li>10" Touchscreen Infotainment</li>
+                                <li>Wireless CarPlay/Android Auto</li>
+                                <li>Ambient RGB Lighting</li>
+                                <li>360° Camera System</li>
+                                <li>Premium sound upgrade</li>
+                            </ul>
+                            <div class="card-btns">
+                                <a href="Navigation/Services/Services.html" class="btn btn-outline btn-sm">VIEW
+                                    DETAILS</a>
+                                <a href="Appointment/Appointment.html" class="btn btn-sm">REQUEST QUOTE</a>
+                            </div>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="card-icon">🧳</div>
+                            <h3>Custom Storage Solutions</h3>
+                            <div class="price">$399+</div>
+                            <ul class="pricing-features">
+                                <li>Center console upgrade</li>
+                                <li>Door panel organizers</li>
+                                <li>Trunk modular system</li>
+                                <li>Hidden compartments</li>
+                                <li>Cargo net system</li>
+                            </ul>
+                            <div class="card-btns">
+                                <a href="Navigation/Services/Services.html" class="btn btn-outline btn-sm">VIEW
+                                    DETAILS</a>
+                                <a href="Appointment/Appointment.html" class="btn btn-sm">REQUEST QUOTE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EXTERIOR -->
+                <div class="tab-panel" id="tab-exterior">
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="card-icon">🎨</div>
+                            <h3>Custom Paint &amp; Wrap</h3>
+                            <div class="price">$1,799+</div>
+                            <ul class="pricing-features">
+                                <li>Full color change</li>
+                                <li>Matte/gloss/satin wrap</li>
+                                <li>Paint correction prep</li>
+                                <li>UV protection layer</li>
+                                <li>3-year material warranty</li>
+                            </ul>
+                            <div class="card-btns">
+                                <a href="Navigation/Services/Services.html" class="btn btn-outline btn-sm">VIEW
+                                    DETAILS</a>
+                                <a href="Appointment/Appointment.html" class="btn btn-sm">REQUEST QUOTE</a>
+                            </div>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="card-icon">🛡️</div>
+                            <h3>Ceramic Coating</h3>
+                            <div class="price">$899+</div>
+                            <ul class="pricing-features">
+                                <li>9H hardness coating</li>
+                                <li>5+ years of protection</li>
+                                <li>Hydrophobic &amp; self-cleaning</li>
+                                <li>Paint decontamination</li>
+                                <li>Gloss enhancement</li>
+                            </ul>
+                            <div class="card-btns">
+                                <a href="Navigation/Services/Services.html" class="btn btn-outline btn-sm">VIEW
+                                    DETAILS</a>
+                                <a href="Appointment/Appointment.html" class="btn btn-sm">REQUEST QUOTE</a>
+                            </div>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="card-icon">🚗</div>
+                            <h3>Body Kits &amp; Aero</h3>
+                            <div class="price">$2,499+</div>
+                            <ul class="pricing-features">
+                                <li>Carbon fiber or ABS kits</li>
+                                <li>Front splitter &amp; rear diffuser</li>
+                                <li>Side skirts &amp; canards</li>
+                                <li>Spoiler installation</li>
+                                <li>Professional fitting</li>
+                            </ul>
+                            <div class="card-btns">
+                                <a href="Navigation/Services/Services.html" class="btn btn-outline btn-sm">VIEW
+                                    DETAILS</a>
+                                <a href="Appointment/Appointment.html" class="btn btn-sm">REQUEST QUOTE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENGINE -->
+                <div class="tab-panel" id="tab-engine">
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="card-icon">⚡</div>
+                            <h3>ECU Tuning</h3>
+                            <div class="price">$499+</div>
+                            <ul class="pricing-features">
+                                <li>Custom remap on dyno</li>
+                                <li>+15–30% HP/TQ gains</li>
+                                <li>Fuel economy optimization</li>
+                                <li>Rev limiter adjustment</li>
+                                <li>30-day satisfaction guarantee</li>
+                            </ul>
+                            <div class="card-btns">
+                                <a href="Navigation/Services/Services.html" class="btn btn-outline btn-sm">VIEW
+                                    DETAILS</a>
+                                <a href="Appointment/Appointment.html" class="btn btn-sm">REQUEST QUOTE</a>
+                            </div>
+                        </div>
+                        <div class="pricing-card featured">
+                            <div class="featured-badge">POPULAR</div>
+                            <div class="card-icon">💨</div>
+                            <h3>Turbo / Supercharger</h3>
+                            <div class="price">$3,999+</div>
+                            <ul class="pricing-features">
+                                <li>Turbo kit (bolt-on)</li>
+                                <li>Intercooler &amp; piping</li>
+                                <li>Fuel system upgrade</li>
+                                <li>Full dyno validation</li>
+                                <li>Oil &amp; coolant lines included</li>
+                            </ul>
+                            <div class="card-btns">
+                                <a href="Navigation/Services/Services.html" class="btn btn-outline btn-sm">VIEW
+                                    DETAILS</a>
+                                <a href="Appointment/Appointment.html" class="btn btn-sm">REQUEST QUOTE</a>
+                            </div>
+                        </div>
+                        <div class="pricing-card">
+                            <div class="card-icon">📊</div>
+                            <h3>Dyno Testing</h3>
+                            <div class="price">$299</div>
+                            <ul class="pricing-features">
+                                <li>Full chassis dyno run</li>
+                                <li>Before/after HP graphs</li>
+                                <li>Air/fuel ratio analysis</li>
+                                <li>Professional report PDF</li>
+                                <li>Expert consultation included</li>
+                            </ul>
+                            <div class="card-btns">
+                                <a href="Navigation/Services/Services.html" class="btn btn-outline btn-sm">VIEW
+                                    DETAILS</a>
+                                <a href="Appointment/Appointment.html" class="btn btn-sm">BOOK TEST</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /tab-content -->
+        </div>
+    </section>
+
+    <!-- PAYMENT CALCULATOR -->
+    <section class="calc-section">
+        <div class="container">
+            <div class="calc-wrapper">
+                <div class="calc-info">
+                    <div class="section-header" style="text-align:left;margin-bottom:20px;">
+                        <div class="eyebrow">— FLEXIBLE FINANCING —</div>
+                        <h2>PAYMENT CALCULATOR</h2>
+                        <p>Estimate your monthly payments instantly. No credit impact — just enter your numbers below.
+                        </p>
+                    </div>
+                    <div class="finance-highlight">
+                        <h4>🔧 IN-HOUSE FINANCING PERKS</h4>
+                        <ul>
+                            <li>APR from 4.99%</li>
+                            <li>6 to 36 month terms</li>
+                            <li>Same-day approval</li>
+                            <li>No hidden fees, ever</li>
+                            <li>Services from $500+</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <a href="Appointment/Appointment.html" class="btn">APPLY FOR FINANCING</a>
+                </div>
+                <div class="calc-card">
+                    <h3>🧮 Monthly Estimate</h3>
+                    <div class="calc-group">
+                        <label>Service Cost ($)</label>
+                        <input type="number" id="calcCost" value="2999" min="100" oninput="calculatePayment()">
+                    </div>
+                    <div class="calc-group">
+                        <label>Down Payment ($)</label>
+                        <input type="number" id="calcDown" value="500" min="0" oninput="calculatePayment()">
+                    </div>
+                    <div class="calc-group">
+                        <label>Loan Term (months)</label>
+                        <select id="calcTerm" onchange="calculatePayment()">
+                            <option value="6">6 months</option>
+                            <option value="12" selected>12 months</option>
+                            <option value="18">18 months</option>
+                            <option value="24">24 months</option>
+                            <option value="36">36 months</option>
+                        </select>
+                    </div>
+                    <div class="calc-group">
+                        <label>APR (%)</label>
+                        <input type="number" id="calcAPR" value="5.9" min="0" max="30" step="0.1"
+                            oninput="calculatePayment()">
+                    </div>
+                    <div class="calc-result">
+                        <div class="monthly" id="calcResult">$225/mo</div>
+                        <p>Estimated monthly payment</p>
+                    </div>
+                    <a href="Appointment/Appointment.html" class="btn"
+                        style="width:100%;margin-top:18px;text-align:center;">GET PRE-APPROVED</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMOTIONS -->
+    <section class="promotions">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow">— LIMITED TIME —</div>
+                <h2>CURRENT PROMOTIONS</h2>
+                <p>Take advantage of our seasonal offers and loyalty rewards. These deals won't last forever.</p>
+            </div>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <div class="promo-glow"></div>
+                    <div class="promo-tag">🌸 SPRING SPECIAL</div>
+                    <h3>Spring Detailing</h3>
+                    <div class="promo-discount">25% OFF</div>
+                    <p>Full interior + exterior detail</p>
+                    <p>Includes ceramic pre-wash treatment</p>
+                    <p class="promo-expires">⏰ Expires: May 31, 2026</p>
+                    <br><a href="Appointment/Appointment.html" class="btn btn-sm">CLAIM OFFER</a>
+                </div>
+                <div class="promo-card">
+                    <div class="promo-glow"></div>
+                    <div class="promo-tag">🎉 NEW CUSTOMER</div>
+                    <h3>Welcome Discount</h3>
+                    <div class="promo-discount">$100 OFF</div>
+                    <p>Any service package over $500</p>
+                    <p>Use code: <strong style="color:#ff5533;">WELCOME100</strong></p>
+                    <p class="promo-expires">⏰ No expiry — first visit only</p>
+                    <br><a href="Appointment/Appointment.html" class="btn btn-sm">BOOK NOW</a>
+                </div>
+                <div class="promo-card">
+                    <div class="promo-glow"></div>
+                    <div class="promo-tag">🤝 REFERRAL</div>
+                    <h3>Refer a Friend</h3>
+                    <div class="promo-discount">$150 CREDIT</div>
+                    <p>For every friend who books a service</p>
+                    <p>Unlimited referrals — stacks up!</p>
+                    <p class="promo-expires">⏰ Ongoing program</p>
+                    <br><a href="Navigation/Contact Us/ContactUs.html" class="btn btn-sm">LEARN MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow">— PRICING FAQ —</div>
+                <h2>GOT QUESTIONS?</h2>
+                <p>Everything you need to know about our pricing, packages, and payment options.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">Are there any hidden fees in the listed prices? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-answer">
+                        <p>Absolutely not. At CRAS Automotive, transparency is a core value. You'll always receive a
+                            detailed written estimate before we start any work, and the final invoice will never exceed
+                            what was quoted without explicit approval from you. No surprises, ever.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">Can I customize a package to fit my exact needs? <span
+                            class="faq-icon">+</span></div>
+                    <div class="faq-answer">
+                        <p>Yes! Our listed packages are starting points. You can add or remove specific services, mix
+                            and match from different categories, or build a fully custom quote. Contact us or book an
+                            appointment for a free consultation with one of our service advisors.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">What payment methods do you accept? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit and debit cards (Visa, MasterCard, Amex, Discover), cash, and
+                            personal checks. We also offer in-house financing for services over $500 with terms from
+                            6–36 months at APR rates from 4.99%.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">How do I qualify for financing? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">
+                        <p>Financing is available for services totaling $500 or more. Same-day approvals are the norm.
+                            Our finance team will review your application with no hard credit pull for
+                            pre-qualification. Visit our Appointment page or call us at 1-800-915-6271 to get started.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">Do the packages include a warranty? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">
+                        <p>Yes. All service packages come with our standard 12-month / 12,000-mile warranty on labor and
+                            installed parts. Some modifications (e.g., leather seats, ceramic coating) carry extended
+                            manufacturer warranties of 3–10 years. Your advisor will explain coverage in detail.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">Can I get a quote before committing? <span class="faq-icon">+</span></div>
+                    <div class="faq-answer">
+                        <p>Of course! Use the Payment Calculator above for a quick estimate, or book a free in-person or
+                            virtual consultation. We'll inspect your vehicle, discuss your goals, and provide a full
+                            written quote with zero obligation to proceed.</p>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div style="text-align:center;">
+                <p style="color:#aaa;margin-bottom:20px;">Still have questions? Our team is ready to help.</p>
+                <a href="FAQ.html" class="btn btn-outline" style="margin-right:15px;">FULL FAQ PAGE</a>
+                <a href="Navigation/Contact Us/ContactUs.html" class="btn">CONTACT US</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>STAY IN THE FAST LANE</h3>
+            <p>Subscribe for monthly offers, service tips, and exclusive discounts dropped straight to your inbox.</p>
+            <form class="newsletter-form" onsubmit="window.location.href='SignIn/SignIn.html'; return false;">
+                <input type="email" placeholder="Enter your email address..." required>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo"><a href="MainPage/Index.html"><img src="MainPage/Index Images/Logo.svg"
+                                alt="CRAS Logo"></a></div>
+                    <p>Top-quality automotive repair, modification, and maintenance services for over 10 years.
+                        Certified technicians committed to your satisfaction.</p>
+                    <div class="footer-phone">
+                        <div class="ico">📞</div>
+                        <span>1-800-915-6271</span>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/accounts/login/?hl=en">in</a>
+                        <a href="https://www.facebook.com/">f</a>
+                        <a href="https://x.com/">X</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="MainPage/Index.html">Home</a></li>
+                        <li><a href="Navigation/About/About.html">About</a></li>
+                        <li><a href="Navigation/Services/Services.html">Services</a></li>
+                        <li><a href="Pricing.html">Pricing &amp; Finance</a></li>
+                        <li><a href="Navigation/Blog/Blog.html">Blog</a></li>
+                        <li><a href="Navigation/Buy Car/BuyCar.html">Buy Car</a></li>
+                        <li><a href="Navigation/Contact Us/ContactUs.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="Appointment/Appointment.html">Book Appointment</a></li>
+                        <li><a href="FAQ.html">FAQ Questions</a></li>
+                        <li><a href="Team Section/OurTeam.html">Our Team</a></li>
+                        <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                        <li><a href="TermsConditions.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LOCATION &amp; CONTACT</h4>
+                    <p>901 N Pitt Str, Suite 170<br>Alexandria, NY, USA</p>
+                    <p>example@email.com</p>
+                    <p>Mon–Fri: 8:00 AM – 6:00 PM</p>
+                    <p>Sat: 9:00 AM – 4:00 PM</p>
+                    <p>24/7 Emergency Roadside</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 CRAS Automotive. All Rights Reserved. |
+                    <a href="PrivacyPolicy.html">Privacy Policy</a> |
+                    <a href="TermsConditions.html">Terms &amp; Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+            document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+        });
+
+        // Mobile menu
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            const nav = document.getElementById('mobileNav');
+            nav.classList.toggle('open');
+            document.getElementById('mobileMenuBtn').textContent = nav.classList.contains('open') ? '✕' : '☰';
+        });
+
+        // Tab switching
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('tab-' + tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        // FAQ accordion
+        function toggleFaq(item) {
+            const isOpen = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!isOpen) item.classList.add('active');
+        }
+
+        // Payment calculator
+        function calculatePayment() {
+            const cost = parseFloat(document.getElementById('calcCost').value) || 0;
+            const down = parseFloat(document.getElementById('calcDown').value) || 0;
+            const term = parseInt(document.getElementById('calcTerm').value) || 12;
+            const apr = parseFloat(document.getElementById('calcAPR').value) || 5.9;
+            const principal = Math.max(0, cost - down);
+            if (principal === 0) { document.getElementById('calcResult').textContent = '$0/mo'; return; }
+            const monthlyRate = apr / 100 / 12;
+            let monthly;
+            if (monthlyRate === 0) {
+                monthly = principal / term;
+            } else {
+                monthly = principal * (monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1);
+            }
+            document.getElementById('calcResult').textContent = '$' + monthly.toFixed(0) + '/mo';
+        }
+        calculatePayment();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+    </script>
+</body>
+
+</html>

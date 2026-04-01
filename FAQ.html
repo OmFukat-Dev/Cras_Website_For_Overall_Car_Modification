@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <title>FAQ - CRAS Automotive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 10px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: #ff5533;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ff5533;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .contact-info .phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .contact-info .phone .icon {
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 85, 51, 0.4);
+            }
+
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(255, 85, 51, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 85, 51, 0);
+            }
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85)), url("MainPage/Index Images/MainBackground1.jpeg") center/cover no-repeat;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ffffff, #ff5533);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto;
+            color: #cccccc;
+        }
+
+        .section-header {
+            text-align: center;
+            margin: 80px 0 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #ff5533);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .section-header p {
+            color: #aaaaaa;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .faq-section {
+            padding: 40px 0 80px;
+        }
+
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .faq-category {
+            margin-bottom: 50px;
+        }
+
+        .faq-category h3 {
+            font-size: 1.4rem;
+            color: #ff5533;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 85, 51, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-item {
+            background: linear-gradient(145deg, #1a1a1a, #252525);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 85, 51, 0.3);
+        }
+
+        .faq-question {
+            padding: 22px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #ff5533;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #ff5533;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 25px 22px;
+            color: #aaaaaa;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(255, 85, 51, 0.1), rgba(255, 85, 51, 0.05));
+            border: 1px solid rgba(255, 85, 51, 0.2);
+            border-radius: 20px;
+            padding: 60px;
+            text-align: center;
+            margin: 0 0 80px;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .cta-section p {
+            color: #aaaaaa;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 85, 51, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        .btn-outline:hover {
+            border-color: #ff5533;
+            color: #ff5533;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .newsletter {
+            padding: 60px 0;
+            background: linear-gradient(to bottom, #1a1a1a 0%, #121212 100%);
+            text-align: center;
+        }
+
+        .newsletter h3 {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 14px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            color: #ffffff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 85, 51, 0.4);
+        }
+
+        footer {
+            background: linear-gradient(to bottom, #121212 0%, #0a0a0a 100%);
+            padding: 80px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #ff5533, transparent);
+        }
+
+        .footer-column p {
+            color: #aaaaaa;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #aaaaaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ff5533;
+        }
+
+        .phone {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #ffffff;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .phone .icon {
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-icons span {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(145deg, #252525, #333333);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-icons span:hover {
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            transform: translateY(-3px);
+        }
+
+        .social-icons span a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .copyright a {
+            color: #aaaaaa;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .copyright a:hover {
+            color: #ff5533;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="MainPage/Index.html"><img src="MainPage/Index Images/Logo.svg" alt="Cras Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="MainPage/Index.html">HOME</a></li>
+                    <li><a href="Navigation/About/About.html">ABOUT</a></li>
+                    <li><a href="Navigation/Services/Services.html">SERVICES</a></li>
+                    <li><a href="Pricing.html">PRICING</a></li>
+                    <li><a href="Navigation/Blog/Blog.html">BLOG</a></li>
+                    <li><a href="Navigation/Buy%20Car/BuyCar.html">BUY CAR</a></li>
+                    <li><a href="Navigation/Contact%20Us/ContactUs.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <div class="phone">
+                    <span class="icon">📞</span>
+                    <span>1-800-915-6271</span>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>FREQUENTLY ASKED QUESTIONS</h1>
+            <p>Find answers to the most common questions about our automotive services, pricing, appointments, and more.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>HOW CAN WE HELP?</h2>
+                <p>Browse by category or scroll through all our answers below</p>
+            </div>
+
+            <div class="faq-container">
+
+                <!-- Appointments -->
+                <div class="faq-category">
+                    <h3>📅 Appointments & Scheduling</h3>
+                    <div class="faq-item">
+                        <div class="faq-question">How do I schedule an appointment?</div>
+                        <div class="faq-answer">
+                            <p>You can book an appointment online via our <a href="Appointment/Appointment.html"
+                                    style="color:#ff5533;">Appointment page</a>, call us at (406) 555-0120, or visit our
+                                facility in person during business hours. Online bookings are available 24/7.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I reschedule or cancel my appointment?</div>
+                        <div class="faq-answer">
+                            <p>Yes. Please call us at least 24 hours before your appointment to reschedule or cancel
+                                without any penalty. You can reach us at 1-800-915-6271 or email us at
+                                example@email.com.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How long will my repair take?</div>
+                        <div class="faq-answer">
+                            <p>Service time varies by complexity. Simple services like oil changes take under an hour.
+                                Engine diagnostics and brake work typically take 1–3 hours. Major repairs or performance
+                                modifications may take 1–5 days. We'll give you a time estimate before starting.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you offer same-day service?</div>
+                        <div class="faq-answer">
+                            <p>Yes, for many routine services like oil changes, tire rotations, and minor diagnostics.
+                                Call us in the morning and we'll do our best to accommodate you the same day. For
+                                complex repairs, we recommend scheduling in advance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="faq-category">
+                    <h3>🔧 Services & Repairs</h3>
+                    <div class="faq-item">
+                        <div class="faq-question">What services do you offer?</div>
+                        <div class="faq-answer">
+                            <p>We offer a full range of automotive services including engine diagnostics & repair,
+                                performance tuning, interior & exterior modifications, ceramic coating, vinyl wraps,
+                                detailing, brake & suspension work, ECU remapping, turbo/supercharger installation, and
+                                fleet maintenance. Visit our <a href="Navigation/Services/Services.html"
+                                    style="color:#ff5533;">Services page</a> for full details.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you work on all vehicle makes and models?</div>
+                        <div class="faq-answer">
+                            <p>Yes. Our certified technicians are trained to work on all makes and models including
+                                domestic, European, Japanese, and Korean vehicles. We have experience with everything
+                                from daily drivers to high-performance sports cars and commercial fleets.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you provide a warranty on repairs?</div>
+                        <div class="faq-answer">
+                            <p>Yes. We provide a 12-month / 12,000-mile warranty on all repairs and services. Certain
+                                modifications and parts may come with extended manufacturer warranties. Our team will
+                                clearly explain warranty coverage before starting any work.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can you do performance modifications on any car?</div>
+                        <div class="faq-answer">
+                            <p>Our performance specialists can work on most vehicles. We'll consult with you first to
+                                ensure the modifications are appropriate for your specific vehicle, driving goals, and
+                                budget. We always prioritize safety and reliability in all performance work.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing & Payment -->
+                <div class="faq-category">
+                    <h3>💳 Pricing & Payment</h3>
+                    <div class="faq-item">
+                        <div class="faq-question">How are prices determined?</div>
+                        <div class="faq-answer">
+                            <p>We provide upfront, transparent pricing based on the service type, parts required, and
+                                labor time. You'll always receive a detailed written estimate before we begin any work.
+                                There are no hidden fees — what we quote is what you pay. View our <a
+                                    href="Pricing.html" style="color:#ff5533;">Pricing page</a> for service packages.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What payment methods do you accept?</div>
+                        <div class="faq-answer">
+                            <p>We accept all major credit and debit cards (Visa, MasterCard, American Express,
+                                Discover), cash, and personal checks. We also offer in-house financing for services over
+                                $500 with terms from 6 to 36 months at competitive APR rates.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you offer financing options?</div>
+                        <div class="faq-answer">
+                            <p>Yes! We offer flexible in-house financing for larger service packages starting at $500.
+                                Terms range from 6 to 36 months with APR starting from 4.99%. Same-day approval is
+                                available. Visit our <a href="Pricing.html" style="color:#ff5533;">Pricing & Finance
+                                    page</a> for details.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Are there any current promotions or discounts?</div>
+                        <div class="faq-answer">
+                            <p>Yes! We regularly run seasonal promotions. New customers get $100 off any service package
+                                over $500 (code: WELCOME100). We also have a referral bonus program — earn $150 credit
+                                for every friend you refer. Check our <a href="Pricing.html"
+                                    style="color:#ff5533;">Pricing page</a> for current offers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location & Hours -->
+                <div class="faq-category">
+                    <h3>📍 Location & Hours</h3>
+                    <div class="faq-item">
+                        <div class="faq-question">Where are you located?</div>
+                        <div class="faq-answer">
+                            <p>We are located at 901 N Pitt Street, Suite 170, Alexandria, NY 13607, USA. We have ample
+                                parking and a comfortable customer lounge with complimentary refreshments while you
+                                wait.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What are your business hours?</div>
+                        <div class="faq-answer">
+                            <p>Monday–Friday: 8:00 AM – 6:00 PM | Saturday: 9:00 AM – 4:00 PM | Sunday: Closed.
+                                Emergency roadside assistance is available 24/7. Call 1-800-915-6271 for emergencies.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you offer pickup and delivery?</div>
+                        <div class="faq-answer">
+                            <p>Yes. For qualifying services, we offer vehicle pickup and delivery within a 15-mile
+                                radius of our facility. This service is available Monday through Friday. Please mention
+                                it when scheduling your appointment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Buy Car -->
+                <div class="faq-category">
+                    <h3>🚗 Buying a Vehicle</h3>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you sell used cars?</div>
+                        <div class="faq-answer">
+                            <p>Yes! We have a certified pre-owned vehicle program. Every vehicle goes through a
+                                150-point inspection and comes with a 12-month/12,000-mile warranty. Browse our <a
+                                    href="Navigation/Buy%20Car/BuyCar.html" style="color:#ff5533;">Buy Car page</a> to see
+                                available inventory.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Can I trade in my vehicle?</div>
+                        <div class="faq-answer">
+                            <p>Absolutely. We offer free vehicle appraisals and provide fair market value for trade-ins.
+                                The credit can be applied toward any service package or vehicle purchase. Contact us to
+                                schedule a trade-in appraisal.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+        <div class="container">
+            <div class="cta-section">
+                <h2>STILL HAVE QUESTIONS?</h2>
+                <p>Our team is ready to help. Reach out via phone, email, or book an appointment directly.</p>
+                <div class="cta-buttons">
+                    <a href="Navigation/Contact%20Us/ContactUs.html" class="btn">CONTACT US</a>
+                    <a href="Appointment/Appointment.html" class="btn btn-outline">BOOK APPOINTMENT</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>SIGN UP FOR OUR NEWSLETTER TO GET WEEKLY UPDATES ON EXCLUSIVE OFFERS AND DISCOUNTS!</h3>
+            <form class="newsletter-form" onsubmit="window.location.href='SignIn/SignIn.html'; return false;">
+                <input type="email" placeholder="Enter your email...">
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <img src="MainPage/Index Images/Logo.svg" alt="Cras Logo">
+                    </div>
+                    <p>Providing top-quality automotive repair and maintenance services for over 10 years.</p>
+                    <div class="phone">
+                        <span class="icon">📞</span>
+                        <span>1-800-915-6271</span>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="MainPage/Index.html">HOME</a></li>
+                        <li><a href="Navigation/About/About.html">ABOUT</a></li>
+                        <li><a href="Navigation/Services/Services.html">SERVICES</a></li>
+                        <li><a href="Pricing.html">PRICING</a></li>
+                        <li><a href="Navigation/Blog/Blog.html">BLOG</a></li>
+                        <li><a href="Navigation/Contact Us/ContactUs.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="Appointment/Appointment.html">Appointment</a></li>
+                        <li><a href="Navigation/Blog/Blog.html">Blog / News</a></li>
+                        <li><a href="FAQ.html">FAQ Questions</a></li>
+                        <li><a href="Team Section/OurTeam.html">Our Team</a></li>
+                        <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                        <li><a href="TermsConditions.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>LOCATION & CONTACT</h4>
+                    <p>901 N Pitt Str, Suite 170 Alexandria, NY, USA</p>
+                    <p>example@email.com</p>
+                    <p>Sun - Thu: Open 24/7</p>
+                    <div class="social-icons">
+                        <span><a href="https://www.instagram.com/"
+                                style="text-decoration:none;color:white;">in</a></span>
+                        <span><a href="https://www.facebook.com/" style="text-decoration:none;color:white;">f</a></span>
+                        <span><a href="https://x.com/" style="text-decoration:none;color:white;">X</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 CRAS Automotive. All Rights Reserved. | <a href="PrivacyPolicy.html">Privacy Policy</a> | <a
+                        href="TermsConditions.html">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const wasActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!wasActive) item.classList.add('active');
+            });
+        });
+        // Header scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+            document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 300);
+        });
+        document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+
+</html>

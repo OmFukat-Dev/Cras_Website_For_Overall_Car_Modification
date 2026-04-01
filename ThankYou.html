@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - CRAS Automotive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff5533;
+        }
+
+        .contact-info .phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .contact-info .phone .icon {
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 80px;
+        }
+
+        .thank-you-card {
+            background: linear-gradient(145deg, #1a1a1a, #252525);
+            border-radius: 24px;
+            padding: 70px 60px;
+            text-align: center;
+            max-width: 650px;
+            border: 1px solid rgba(255, 85, 51, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .checkmark-circle {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 3rem;
+            animation: pop 0.6s ease 0.3s both;
+            box-shadow: 0 0 40px rgba(255, 85, 51, 0.4);
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(0);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .thank-you-card h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #ffffff, #ff5533);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .thank-you-card .subtitle {
+            font-size: 1.3rem;
+            color: #ff5533;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-card p {
+            color: #aaaaaa;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background: rgba(255, 85, 51, 0.08);
+            border: 1px solid rgba(255, 85, 51, 0.2);
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .info-box h3 {
+            color: #ff5533;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-box p {
+            color: #cccccc;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 85, 51, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        .btn-outline:hover {
+            border-color: #ff5533;
+            color: #ff5533;
+            box-shadow: none;
+        }
+
+        .countdown {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        footer {
+            background: linear-gradient(to bottom, #121212 0%, #0a0a0a 100%);
+            padding: 40px 0 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ff5533;
+        }
+
+        .copyright {
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .thank-you-card {
+                padding: 50px 30px;
+            }
+
+            .thank-you-card h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="MainPage/Index.html"><img src="MainPage/Index Images/Logo.svg" alt="Cras Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="MainPage/Index.html">HOME</a></li>
+                    <li><a href="Navigation/About/About.html">ABOUT</a></li>
+                    <li><a href="Navigation/Services/Services.html">SERVICES</a></li>
+                    <li><a href="Pricing.html">PRICING</a></li>
+                    <li><a href="Navigation/Blog/Blog.html">BLOG</a></li>
+                    <li><a href="Navigation/Buy%20Car/BuyCar.html">BUY CAR</a></li>
+                    <li><a href="Navigation/Contact%20Us/ContactUs.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <div class="phone">
+                    <span class="icon">📞</span>
+                    <span>1-800-915-6271</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="thank-you-card">
+            <div class="checkmark-circle">✓</div>
+            <h1>THANK YOU!</h1>
+            <p class="subtitle">Your Appointment Request Has Been Received</p>
+            <p>We've successfully received your appointment request. Our team will review your information and contact
+                you within <strong style="color:#ffffff;">2 business hours</strong> to confirm your appointment time.
+            </p>
+
+            <div class="info-box">
+                <h3>What Happens Next?</h3>
+                <p>📞 We'll call or email you to confirm your appointment details</p>
+                <p>📋 A service advisor will review your vehicle information</p>
+                <p>🔧 Our certified technicians will be ready for your visit</p>
+                <p>📍 See you at: 901 N Pitt Str, Suite 170, Alexandria, NY</p>
+            </div>
+
+            <p>Have questions in the meantime? Call us at <strong style="color:#ff5533;">1-800-915-6271</strong> or
+                email us at <strong style="color:#ff5533;">example@email.com</strong></p>
+
+            <div class="button-group">
+                <a href="MainPage/Index.html" class="btn">BACK TO HOME</a>
+                <a href="Navigation/Services/Services.html" class="btn btn-outline">VIEW SERVICES</a>
+            </div>
+            <p class="countdown" id="countdown">You'll be redirected to the homepage in <span id="timer">10</span>
+                seconds...</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="MainPage/Index.html">Home</a>
+            <a href="Navigation/Services/Services.html">Services</a>
+            <a href="Pricing.html">Pricing</a>
+            <a href="Appointment/Appointment.html">Book Appointment</a>
+            <a href="Navigation/Contact Us/ContactUs.html">Contact</a>
+            <a href="FAQ.html">FAQ</a>
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsConditions.html">Terms</a>
+        </div>
+        <p class="copyright">© 2025 CRAS Automotive. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let seconds = 10;
+        const timer = document.getElementById('timer');
+        const countdown = setInterval(() => {
+            seconds--;
+            timer.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.location.href = 'MainPage/Index.html';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

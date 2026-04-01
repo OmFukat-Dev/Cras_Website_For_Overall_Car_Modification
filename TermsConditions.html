@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - CRAS Automotive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff5533;
+        }
+
+        .phone-h {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .phone-h .icon {
+            background: linear-gradient(135deg, #ff5533, #ff6b4a);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("MainPage/Index Images/MainBackground1.jpeg") center/cover no-repeat;
+            padding: 160px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ffffff, #ff5533);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #aaaaaa;
+            font-size: 1rem;
+        }
+
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .policy-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .last-updated {
+            background: rgba(255, 85, 51, 0.1);
+            border: 1px solid rgba(255, 85, 51, 0.2);
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin-bottom: 40px;
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+
+        .last-updated strong {
+            color: #ff5533;
+        }
+
+        .policy-section {
+            background: linear-gradient(145deg, #1a1a1a, #252525);
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: border-color 0.3s;
+        }
+
+        .policy-section:hover {
+            border-color: rgba(255, 85, 51, 0.2);
+        }
+
+        .policy-section h2 {
+            font-size: 1.4rem;
+            color: #ff5533;
+            margin-bottom: 15px;
+        }
+
+        .policy-section p {
+            color: #aaaaaa;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .policy-section ul {
+            color: #aaaaaa;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .policy-section ul li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        .policy-section a {
+            color: #ff5533;
+            text-decoration: none;
+        }
+
+        .policy-section a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: rgba(255, 85, 51, 0.08);
+            border-left: 4px solid #ff5533;
+            border-radius: 0 8px 8px 0;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-style: italic;
+            color: #cccccc;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(255, 85, 51, 0.1), rgba(255, 85, 51, 0.05));
+            border: 1px solid rgba(255, 85, 51, 0.3);
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin-top: 30px;
+        }
+
+        .contact-box h3 {
+            color: #ff5533;
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            color: #cccccc;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background: linear-gradient(to bottom, #121212 0%, #0a0a0a 100%);
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .footer-column h4 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column ul li a {
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ff5533;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #555;
+            font-size: 0.85rem;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .copyright a {
+            color: #aaaaaa;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .copyright a:hover {
+            color: #ff5533;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .policy-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><a href="MainPage/Index.html"><img src="MainPage/Index Images/Logo.svg"
+                        alt="Cras Logo"></a></div>
+            <nav>
+                <ul>
+                    <li><a href="MainPage/Index.html">HOME</a></li>
+                    <li><a href="Navigation/About/About.html">ABOUT</a></li>
+                    <li><a href="Navigation/Services/Services.html">SERVICES</a></li>
+                    <li><a href="Pricing.html">PRICING</a></li>
+                    <li><a href="Navigation/Blog/Blog.html">BLOG</a></li>
+                    <li><a href="Navigation/Contact Us/ContactUs.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="phone-h">
+                <span class="icon">📞</span>
+                <span>1-800-915-6271</span>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>TERMS & CONDITIONS</h1>
+            <p>Please read these terms carefully before using our services</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="policy-wrapper">
+                <div class="last-updated"><strong>Last Updated:</strong> February 24, 2025 &nbsp;|&nbsp;
+                    <strong>Effective Date:</strong> January 1, 2025</div>
+
+                <div class="policy-section">
+                    <h2>📜 1. Agreement to Terms</h2>
+                    <p>By accessing and using the CRAS Automotive website and services, you accept and agree to be bound
+                        by these Terms and Conditions. If you do not agree to these Terms, please do not use our website
+                        or services.</p>
+                    <div class="highlight-box">
+                        <p>These Terms constitute a legally binding agreement between you and CRAS Automotive regarding
+                            your use of our website, services, and facilities.</p>
+                    </div>
+                </div>
+
+                <div class="policy-section">
+                    <h2>⚙️ 2. Our Services</h2>
+                    <p>CRAS Automotive provides automotive repair, maintenance, performance modifications, detailing,
+                        and related services as described on our website. We reserve the right to:</p>
+                    <ul>
+                        <li>Modify or discontinue any service without prior notice</li>
+                        <li>Refuse service to anyone for any reason</li>
+                        <li>Change pricing with reasonable notice</li>
+                        <li>Sub-contract work to qualified third-party partners when necessary</li>
+                    </ul>
+                    <p>All services are subject to availability and a technician's assessment of the vehicle's condition
+                        and technical feasibility.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>📅 3. Appointments & Cancellations</h2>
+                    <p>By booking an appointment with CRAS Automotive, you agree to:</p>
+                    <ul>
+                        <li>Arrive within 15 minutes of the scheduled appointment time</li>
+                        <li>Provide accurate vehicle and contact information</li>
+                        <li>Cancel or reschedule at least 24 hours in advance</li>
+                        <li>Late cancellations (under 12 hours) or no-shows may incur a $50 cancellation fee for
+                            specialized services</li>
+                    </ul>
+                    <p>We reserve the right to reschedule appointments in the event of equipment failure, staff
+                        shortages, or other unforeseen circumstances. We will provide reasonable notice in such cases.
+                    </p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>💳 4. Payment & Pricing</h2>
+                    <p>All prices are displayed in US Dollars (USD). Payment terms include:</p>
+                    <ul>
+                        <li>Payment is due upon completion of all services unless a financing agreement is in place</li>
+                        <li>A written estimate will be provided before work begins; oral estimates are not binding</li>
+                        <li>Additional charges may apply if unforeseen issues are discovered during the repair process
+                            (customer will be notified first)</li>
+                        <li>We accept major credit cards, debit cards, and cash</li>
+                        <li>Returned checks are subject to a $35 fee plus applicable bank charges</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h2>🔧 5. Warranty & Guarantees</h2>
+                    <p>We provide a <strong>12-month / 12,000-mile warranty</strong> on all repairs and services,
+                        subject to the following conditions:</p>
+                    <ul>
+                        <li>Warranty covers defects in workmanship and parts installed by CRAS Automotive</li>
+                        <li>Warranty is voided by: neglect, misuse, accidents, unauthorized modifications, or failure to
+                            follow maintenance recommendations</li>
+                        <li>Parts-only warranties are subject to the individual manufacturer's warranty terms</li>
+                        <li>Warranty claims must be reported within the warranty period and the vehicle must be returned
+                            to CRAS Automotive for inspection</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h2>🚗 6. Vehicle Drop-Off & Liability</h2>
+                    <p>When leaving your vehicle with us:</p>
+                    <ul>
+                        <li>CRAS Automotive will exercise reasonable care in handling your vehicle</li>
+                        <li>We are not responsible for: pre-existing damage, items left in the vehicle, or damage caused
+                            by hidden defects</li>
+                        <li>Vehicles left more than 30 days after service completion may be subject to daily storage
+                            fees</li>
+                        <li>Customer assumes responsibility for ensuring the vehicle is street-legal and properly
+                            insured when driving to our facility</li>
+                    </ul>
+                </div>
+
+                <div class="policy-section">
+                    <h2>🌐 7. Website Use</h2>
+                    <p>When using our website, you agree not to:</p>
+                    <ul>
+                        <li>Use the site for any unlawful purpose or in violation of any regulations</li>
+                        <li>Attempt to gain unauthorized access to any part of the website</li>
+                        <li>Transmit harmful, offensive, or disruptive content</li>
+                        <li>Use automated tools to scrape, crawl, or extract data from our website</li>
+                    </ul>
+                    <p>All content on this website, including text, images, logos, and design, is the property of CRAS
+                        Automotive and is protected by copyright law. Unauthorized reproduction is prohibited.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>⚖️ 8. Limitation of Liability</h2>
+                    <p>To the maximum extent permitted by law, CRAS Automotive shall not be liable for any indirect,
+                        incidental, special, consequential, or punitive damages resulting from your use of our services
+                        or website. Our total liability shall not exceed the amount paid for the specific service giving
+                        rise to the claim.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>📍 9. Governing Law</h2>
+                    <p>These Terms and Conditions are governed by the laws of the State of New York, USA. Any disputes
+                        arising from these Terms shall be resolved in the courts of Alexandria, New York. Both parties
+                        agree to first attempt resolution through good-faith negotiation before initiating legal
+                        proceedings.</p>
+                </div>
+
+                <div class="policy-section">
+                    <h2>🔄 10. Changes to Terms</h2>
+                    <p>CRAS Automotive reserves the right to update these Terms and Conditions at any time. We will
+                        notify users of material changes by updating the "Last Updated" date. Continued use of our
+                        services after changes constitutes acceptance of the new Terms.</p>
+                </div>
+
+                <div class="contact-box">
+                    <h3>📬 Questions About These Terms?</h3>
+                    <p>If you have questions about our Terms and Conditions, please contact us:</p>
+                    <p>📧 Email: <a href="mailto:example@email.com" style="color:#ff5533;">example@email.com</a></p>
+                    <p>📞 Phone: <a href="tel:18009156271" style="color:#ff5533;">1-800-915-6271</a></p>
+                    <p>📍 Address: 901 N Pitt Str, Suite 170, Alexandria, NY, USA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="MainPage/Index.html">Home</a></li>
+                        <li><a href="Navigation/About/About.html">About</a></li>
+                        <li><a href="Navigation/Services/Services.html">Services</a></li>
+                        <li><a href="Pricing.html">Pricing</a></li>
+                        <li><a href="Navigation/Contact Us/ContactUs.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="Appointment/Appointment.html">Appointment</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="Team Section/OurTeam.html">Our Team</a></li>
+                        <li><a href="Navigation/Blog/Blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                        <li><a href="TermsConditions.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 CRAS Automotive. All Rights Reserved. | <a href="PrivacyPolicy.html">Privacy Policy</a> | <a
+                        href="TermsConditions.html">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
